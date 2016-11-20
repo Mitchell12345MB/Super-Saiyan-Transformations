@@ -50,7 +50,7 @@ public class Main
   
   ArrayList<Player> cooldown = new ArrayList<Player>();
   int Cooldown = getConfig().getInt("Cooldown_Timer");
-  String Prefix = getConfig().getString("Prefix").replace("&", "�");
+  String Prefix = getConfig().getString("Prefix").replace("&", "§");
   
   public boolean onCommand(CommandSender sender, Command cmd, String Label, String[] args)
   {
@@ -82,17 +82,17 @@ public class Main
           if (getConfig().getBoolean("Potential_Unleashed.Broadcast"))
           {
             Bukkit.broadcastMessage(player.getDisplayName() + ": " + 
-              getConfig().getString("Potential_Unleashed.PrefixQuote").replace("&", "�"));
+              getConfig().getString("Potential_Unleashed.PrefixQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("Potential_Unleashed.MiddleQuote").replace("&", "�"));
+              getConfig().getString("Potential_Unleashed.MiddleQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("Potential_Unleashed.SuffixQuote").replace("&", "�"));
+              getConfig().getString("Potential_Unleashed.SuffixQuote").replace("&", "§"));
           }
           else if (!getConfig().getBoolean("Potential_Unleashed.Broadcast"))
           {
-            player.sendMessage(getConfig().getString("Potential_Unleashed.PrefixQuote").replace("&", "�"));
-            player.sendMessage(getConfig().getString("Potential_Unleashed.MiddleQuote").replace("&", "�"));
-            player.sendMessage(getConfig().getString("Potential_Unleashed.SuffixQuote").replace("&", "�"));
+            player.sendMessage(getConfig().getString("Potential_Unleashed.PrefixQuote").replace("&", "§"));
+            player.sendMessage(getConfig().getString("Potential_Unleashed.MiddleQuote").replace("&", "§"));
+            player.sendMessage(getConfig().getString("Potential_Unleashed.SuffixQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Potential_Unleashed.Use_Traits?.DAMAGE_RESISTANCE")) {
             player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -145,7 +145,7 @@ public class Main
               player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
             }
             player.sendMessage(
-              getConfig().getString("Potential_Unleashed.DamageTakenQuote").replace("&", "�"));
+              getConfig().getString("Potential_Unleashed.DamageTakenQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Lightning_Effect")) {
             player.getWorld().strikeLightning(player.getLocation());
@@ -210,15 +210,15 @@ public class Main
             if (getConfig().getBoolean("Super_Saiyan_1.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ": " + 
-                getConfig().getString("Super_Saiyan_1.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_1.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_1.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Super_Saiyan_1.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_1.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_1.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Super_Saiyan_1.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Super_Saiyan_1.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_1.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_1.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_1.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_1.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_1.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Super_Saiyan_1.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -270,7 +270,7 @@ public class Main
               if (getConfig().getBoolean("Super_Saiyan_1.Use_Traits?.HEALTH_BOOST")) {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
               }
-              player.sendMessage(getConfig().getString("Super_Saiyan_1.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_1.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Lightning_Effect")) {
               player.getWorld().strikeLightning(player.getLocation());
@@ -324,15 +324,15 @@ public class Main
             if (getConfig().getBoolean("Super_Saiyan_2.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ": " + 
-                getConfig().getString("Super_Saiyan_2.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_2.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_2.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Super_Saiyan_2.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_2.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_2.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Super_Saiyan_2.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Super_Saiyan_2.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_2.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_2.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_2.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_2.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_2.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Super_Saiyan_2.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -384,7 +384,7 @@ public class Main
               if (getConfig().getBoolean("Super_Saiyan_2.Use_Traits?.HEALTH_BOOST")) {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
               }
-              player.sendMessage(getConfig().getString("Super_Saiyan_2.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_2.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Lightning_Effect")) {
               player.getWorld().strikeLightning(player.getLocation());
@@ -438,15 +438,15 @@ public class Main
             if (getConfig().getBoolean("Super_Saiyan_3.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ": " + 
-                getConfig().getString("Super_Saiyan_3.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_3.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_3.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Super_Saiyan_3.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_3.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_3.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Super_Saiyan_3.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Super_Saiyan_3.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_3.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_3.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_3.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_3.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_3.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Super_Saiyan_3.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -498,7 +498,7 @@ public class Main
               if (getConfig().getBoolean("Super_Saiyan_3.Use_Traits?.HEALTH_BOOST")) {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
               }
-              player.sendMessage(getConfig().getString("Super_Saiyan_3.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_3.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Lightning_Effect")) {
               player.getWorld().strikeLightning(player.getLocation());
@@ -552,15 +552,15 @@ public class Main
             if (getConfig().getBoolean("Super_Saiyan_4.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ": " + 
-                getConfig().getString("Super_Saiyan_4.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_4.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_4.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Super_Saiyan_4.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_4.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_4.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Super_Saiyan_4.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Super_Saiyan_4.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_4.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_4.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_4.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_4.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_4.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Super_Saiyan_4.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -612,7 +612,7 @@ public class Main
               if (getConfig().getBoolean("Super_Saiyan_4.Use_Traits?.HEALTH_BOOST")) {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
               }
-              player.sendMessage(getConfig().getString("Super_Saiyan_4.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_4.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Lightning_Effect")) {
               player.getWorld().strikeLightning(player.getLocation());
@@ -666,15 +666,15 @@ public class Main
             if (getConfig().getBoolean("Super_Saiyan_5.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ": " + 
-                getConfig().getString("Super_Saiyan_5.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_5.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_5.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Super_Saiyan_5.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_5.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Super_Saiyan_5.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Super_Saiyan_5.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Super_Saiyan_5.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_5.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_5.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_5.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_5.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_5.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Super_Saiyan_5.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -726,7 +726,7 @@ public class Main
               if (getConfig().getBoolean("Super_Saiyan_5.Use_Traits?.HEALTH_BOOST")) {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
               }
-              player.sendMessage(getConfig().getString("Super_Saiyan_5.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_5.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Lightning_Effect")) {
               player.getWorld().strikeLightning(player.getLocation());
@@ -780,17 +780,17 @@ public class Main
             if (getConfig().getBoolean("Super_Saiyan_God.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Super_Saiyan_God.PrefixQuote").replace("&", "�"));
+                getConfig().getString("Super_Saiyan_God.PrefixQuote").replace("&", "§"));
               Bukkit.broadcastMessage(
-                getConfig().getString("Super_Saiyan_God.MiddleQuote").replace("&", "�"));
+                getConfig().getString("Super_Saiyan_God.MiddleQuote").replace("&", "§"));
               Bukkit.broadcastMessage(
-                getConfig().getString("Super_Saiyan_God.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Super_Saiyan_God.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Super_Saiyan_God.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Super_Saiyan_God.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_God.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Super_Saiyan_God.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_God.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_God.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Super_Saiyan_God.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Super_Saiyan_God.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -843,7 +843,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
               }
               player.sendMessage(
-                getConfig().getString("Super_Saiyan_God.DamageTakenQuote").replace("&", "�"));
+                getConfig().getString("Super_Saiyan_God.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Lightning_Effect")) {
               player.getWorld().strikeLightning(player.getLocation());
@@ -1133,15 +1133,15 @@ public class Main
           if (getConfig().getBoolean("Base_Form.Broadcast"))
           {
             Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-              getConfig().getString("Base_Form.PrefixQuote").replace("&", "�"));
-            Bukkit.broadcastMessage(getConfig().getString("Base_Form.MiddleQuote").replace("&", "�"));
-            Bukkit.broadcastMessage(getConfig().getString("Base_Form.SuffixQuote").replace("&", "�"));
+              getConfig().getString("Base_Form.PrefixQuote").replace("&", "§"));
+            Bukkit.broadcastMessage(getConfig().getString("Base_Form.MiddleQuote").replace("&", "§"));
+            Bukkit.broadcastMessage(getConfig().getString("Base_Form.SuffixQuote").replace("&", "§"));
           }
           else if (!getConfig().getBoolean("Base_Form.Broadcast"))
           {
-            player.sendMessage(getConfig().getString("Base_Form.PrefixQuote").replace("&", "�"));
-            player.sendMessage(getConfig().getString("Base_Form.MiddleQuote").replace("&", "�"));
-            player.sendMessage(getConfig().getString("Base_Form.SuffixQuote").replace("&", "�"));
+            player.sendMessage(getConfig().getString("Base_Form.PrefixQuote").replace("&", "§"));
+            player.sendMessage(getConfig().getString("Base_Form.MiddleQuote").replace("&", "§"));
+            player.sendMessage(getConfig().getString("Base_Form.SuffixQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Sound_Effect")) {
             player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -1194,17 +1194,17 @@ public class Main
           if (getConfig().getBoolean("False_Super_Saiyan.Broadcast"))
           {
             Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-              getConfig().getString("False_Super_Saiyan.PrefixQuote").replace("&", "�"));
+              getConfig().getString("False_Super_Saiyan.PrefixQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("False_Super_Saiyan.MiddleQuote").replace("&", "�"));
+              getConfig().getString("False_Super_Saiyan.MiddleQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("False_Super_Saiyan.SuffixQuote").replace("&", "�"));
+              getConfig().getString("False_Super_Saiyan.SuffixQuote").replace("&", "§"));
           }
           else if (!getConfig().getBoolean("False_Super_Saiyan.Broadcast"))
           {
-            player.sendMessage(getConfig().getString("False_Super_Saiyan.PrefixQuote").replace("&", "�"));
-            player.sendMessage(getConfig().getString("False_Super_Saiyan.MiddleQuote").replace("&", "�"));
-            player.sendMessage(getConfig().getString("False_Super_Saiyan.SuffixQuote").replace("&", "�"));
+            player.sendMessage(getConfig().getString("False_Super_Saiyan.PrefixQuote").replace("&", "§"));
+            player.sendMessage(getConfig().getString("False_Super_Saiyan.MiddleQuote").replace("&", "§"));
+            player.sendMessage(getConfig().getString("False_Super_Saiyan.SuffixQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("False_Super_Saiyan.Use_Traits?.DAMAGE_RESISTANCE")) {
             player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -1257,7 +1257,7 @@ public class Main
               player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
             }
             player.sendMessage(
-              getConfig().getString("False_Super_Saiyan.DamageTakenQuote").replace("&", "�"));
+              getConfig().getString("False_Super_Saiyan.DamageTakenQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Lightning_Effect")) {
             player.getWorld().strikeLightning(player.getLocation());
@@ -1317,20 +1317,20 @@ public class Main
           if (getConfig().getBoolean("Ultimate_Super_Saiyan.Broadcast"))
           {
             Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-              getConfig().getString("Ultimate_Super_Saiyan.PrefixQuote").replace("&", "�"));
+              getConfig().getString("Ultimate_Super_Saiyan.PrefixQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("Ultimate_Super_Saiyan.MiddleQuote").replace("&", "�"));
+              getConfig().getString("Ultimate_Super_Saiyan.MiddleQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("Ultimate_Super_Saiyan.SuffixQuote").replace("&", "�"));
+              getConfig().getString("Ultimate_Super_Saiyan.SuffixQuote").replace("&", "§"));
           }
           else if (!getConfig().getBoolean("Ultimate_Super_Saiyan.Broadcast"))
           {
             player.sendMessage(
-              getConfig().getString("Ultimate_Super_Saiyan.PrefixQuote").replace("&", "�"));
+              getConfig().getString("Ultimate_Super_Saiyan.PrefixQuote").replace("&", "§"));
             player.sendMessage(
-              getConfig().getString("Ultimate_Super_Saiyan.MiddleQuote").replace("&", "�"));
+              getConfig().getString("Ultimate_Super_Saiyan.MiddleQuote").replace("&", "§"));
             player.sendMessage(
-              getConfig().getString("Ultimate_Super_Saiyan.SuffixQuote").replace("&", "�"));
+              getConfig().getString("Ultimate_Super_Saiyan.SuffixQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Ultimate_Super_Saiyan.Use_Traits?.DAMAGE_RESISTANCE")) {
             player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -1383,7 +1383,7 @@ public class Main
               player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
             }
             player.sendMessage(
-              getConfig().getString("Ultimate_Super_Saiyan.DamageTakenQuote").replace("&", "�"));
+              getConfig().getString("Ultimate_Super_Saiyan.DamageTakenQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Lightning_Effect")) {
             player.getWorld().strikeLightning(player.getLocation());
@@ -1443,20 +1443,20 @@ public class Main
           if (getConfig().getBoolean("Legendary_Super_Saiyan_1.Broadcast"))
           {
             Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-              getConfig().getString("Legendary_Super_Saiyan_1.PrefixQuote").replace("&", "�"));
+              getConfig().getString("Legendary_Super_Saiyan_1.PrefixQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("Legendary_Super_Saiyan_1.MiddleQuote").replace("&", "�"));
+              getConfig().getString("Legendary_Super_Saiyan_1.MiddleQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("Legendary_Super_Saiyan_1.SuffixQuote").replace("&", "�"));
+              getConfig().getString("Legendary_Super_Saiyan_1.SuffixQuote").replace("&", "§"));
           }
           else if (!getConfig().getBoolean("Legendary_Super_Saiyan_1.Broadcast"))
           {
             player.sendMessage(
-              getConfig().getString("Legendary_Super_Saiyan_1.PrefixQuote").replace("&", "�"));
+              getConfig().getString("Legendary_Super_Saiyan_1.PrefixQuote").replace("&", "§"));
             player.sendMessage(
-              getConfig().getString("Legendary_Super_Saiyan_1.MiddleQuote").replace("&", "�"));
+              getConfig().getString("Legendary_Super_Saiyan_1.MiddleQuote").replace("&", "§"));
             player.sendMessage(
-              getConfig().getString("Legendary_Super_Saiyan_1.SuffixQuote").replace("&", "�"));
+              getConfig().getString("Legendary_Super_Saiyan_1.SuffixQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Legendary_Super_Saiyan_1.Use_Traits?.DAMAGE_RESISTANCE")) {
             player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -1509,7 +1509,7 @@ public class Main
               player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
             }
             player.sendMessage(
-              getConfig().getString("Legendary_Super_Saiyan_1.DamageTakenQuote").replace("&", "�"));
+              getConfig().getString("Legendary_Super_Saiyan_1.DamageTakenQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Lightning_Effect")) {
             player.getWorld().strikeLightning(player.getLocation());
@@ -1570,17 +1570,17 @@ public class Main
           if (getConfig().getBoolean("Super_Saiyan_Blue_1.Broadcast"))
           {
             Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-              getConfig().getString("Super_Saiyan_Blue_1.PrefixQuote").replace("&", "�"));
+              getConfig().getString("Super_Saiyan_Blue_1.PrefixQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("Super_Saiyan_Blue_1.MiddleQuote").replace("&", "�"));
+              getConfig().getString("Super_Saiyan_Blue_1.MiddleQuote").replace("&", "§"));
             Bukkit.broadcastMessage(
-              getConfig().getString("Super_Saiyan_Blue_1.SuffixQuote").replace("&", "�"));
+              getConfig().getString("Super_Saiyan_Blue_1.SuffixQuote").replace("&", "§"));
           }
           else if (!getConfig().getBoolean("Super_Saiyan_Blue_1.Broadcast"))
           {
-            player.sendMessage(getConfig().getString("Super_Saiyan_Blue_1.PrefixQuote").replace("&", "�"));
-            player.sendMessage(getConfig().getString("Super_Saiyan_Blue_1.MiddleQuote").replace("&", "�"));
-            player.sendMessage(getConfig().getString("Super_Saiyan_Blue_1.SuffixQuote").replace("&", "�"));
+            player.sendMessage(getConfig().getString("Super_Saiyan_Blue_1.PrefixQuote").replace("&", "§"));
+            player.sendMessage(getConfig().getString("Super_Saiyan_Blue_1.MiddleQuote").replace("&", "§"));
+            player.sendMessage(getConfig().getString("Super_Saiyan_Blue_1.SuffixQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Super_Saiyan_Blue_1.Use_Traits?.DAMAGE_RESISTANCE")) {
             player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -1633,7 +1633,7 @@ public class Main
               player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
             }
             player.sendMessage(
-              getConfig().getString("Super_Saiyan_Blue_1.DamageTakenQuote").replace("&", "�"));
+              getConfig().getString("Super_Saiyan_Blue_1.DamageTakenQuote").replace("&", "§"));
           }
           if (getConfig().getBoolean("Lightning_Effect")) {
             player.getWorld().strikeLightning(player.getLocation());
@@ -1696,15 +1696,15 @@ public class Main
             if (getConfig().getBoolean("Kaioken_x1.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Kaioken_x1.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x1.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x1.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Kaioken_x1.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x1.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x1.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Kaioken_x1.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Kaioken_x1.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x1.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x1.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x1.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x1.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x1.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Kaioken_x1.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 1000000, 
@@ -1777,7 +1777,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 
                   (int)(getConfig().getInt("Kaioken_x1.Kaioken_Cooldown") * 20L), 0));
               }
-              player.sendMessage(getConfig().getString("Kaioken_x1.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x1.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Sound_Effect")) {
               player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -1826,15 +1826,15 @@ public class Main
             if (getConfig().getBoolean("Kaioken_x2.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Kaioken_x2.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x2.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x2.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Kaioken_x2.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x2.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x2.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Kaioken_x2.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Kaioken_x2.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x2.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x2.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x2.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x2.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x2.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Kaioken_x2.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -1907,7 +1907,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 
                   (int)(getConfig().getInt("Kaioken_x2.Kaioken_Cooldown") * 20L), 0));
               }
-              player.sendMessage(getConfig().getString("Kaioken_x2.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x2.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Sound_Effect")) {
               player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -1956,15 +1956,15 @@ public class Main
             if (getConfig().getBoolean("Kaioken_x3.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Kaioken_x3.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x3.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x3.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Kaioken_x3.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x3.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x3.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Kaioken_x3.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Kaioken_x3.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x3.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x3.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x3.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x3.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x3.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Kaioken_x3.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -2037,7 +2037,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 
                   (int)(getConfig().getInt("Kaioken_x3.Kaioken_Cooldown") * 20L), 0));
               }
-              player.sendMessage(getConfig().getString("Kaioken_x3.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x3.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Sound_Effect")) {
               player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -2086,15 +2086,15 @@ public class Main
             if (getConfig().getBoolean("Kaioken_x4.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Kaioken_x4.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x4.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x4.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Kaioken_x4.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x4.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x4.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Kaioken_x4.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Kaioken_x4.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x4.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x4.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x4.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x4.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x4.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Kaioken_x4.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -2167,7 +2167,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 
                   (int)(getConfig().getInt("Kaioken_x4.Kaioken_Cooldown") * 20L), 0));
               }
-              player.sendMessage(getConfig().getString("Kaioken_x4.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x4.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Sound_Effect")) {
               player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -2216,15 +2216,15 @@ public class Main
             if (getConfig().getBoolean("Kaioken_x20.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Kaioken_x20.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x20.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x20.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Kaioken_x20.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x20.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x20.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Kaioken_x20.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Kaioken_x20.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x20.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x20.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x20.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x20.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x20.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Kaioken_x20.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -2297,7 +2297,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 
                   (int)(getConfig().getInt("Kaioken_x20.Kaioken_Cooldown") * 20L), 0));
               }
-              player.sendMessage(getConfig().getString("Kaioken_x20.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x20.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Sound_Effect")) {
               player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -2346,15 +2346,15 @@ public class Main
             if (getConfig().getBoolean("Kaioken_x30.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Kaioken_x30.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x30.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x30.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Kaioken_x30.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x30.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x30.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Kaioken_x30.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Kaioken_x30.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x30.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x30.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x30.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x30.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x30.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Kaioken_x30.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -2427,7 +2427,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 
                   (int)(getConfig().getInt("Kaioken_x30.Kaioken_Cooldown") * 20L), 0));
               }
-              player.sendMessage(getConfig().getString("Kaioken_x30.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x30.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Sound_Effect")) {
               player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -2476,15 +2476,15 @@ public class Main
             if (getConfig().getBoolean("Kaioken_x40.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Kaioken_x40.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x40.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x40.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Kaioken_x40.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x40.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x40.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Kaioken_x40.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Kaioken_x40.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x40.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x40.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x40.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x40.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x40.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Kaioken_x40.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -2557,7 +2557,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 
                   (int)(getConfig().getInt("Kaioken_x40.Kaioken_Cooldown") * 20L), 0));
               }
-              player.sendMessage(getConfig().getString("Kaioken_x40.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x40.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Sound_Effect")) {
               player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -2606,15 +2606,15 @@ public class Main
             if (getConfig().getBoolean("Kaioken_x50.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Kaioken_x50.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x50.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x50.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Kaioken_x50.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x50.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x50.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Kaioken_x50.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Kaioken_x50.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x50.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x50.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x50.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x50.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x50.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Kaioken_x50.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -2687,7 +2687,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 
                   (int)(getConfig().getInt("Kaioken_x50.Kaioken_Cooldown") * 20L), 0));
               }
-              player.sendMessage(getConfig().getString("Kaioken_x50.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x50.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Sound_Effect")) {
               player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -2736,15 +2736,15 @@ public class Main
             if (getConfig().getBoolean("Kaioken_x100.Broadcast"))
             {
               Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                getConfig().getString("Kaioken_x100.PrefixQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x100.MiddleQuote").replace("&", "�"));
-              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x100.SuffixQuote").replace("&", "�"));
+                getConfig().getString("Kaioken_x100.PrefixQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x100.MiddleQuote").replace("&", "§"));
+              Bukkit.broadcastMessage(getConfig().getString("Kaioken_x100.SuffixQuote").replace("&", "§"));
             }
             else if (!getConfig().getBoolean("Kaioken_x100.Broadcast"))
             {
-              player.sendMessage(getConfig().getString("Kaioken_x100.PrefixQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x100.MiddleQuote").replace("&", "�"));
-              player.sendMessage(getConfig().getString("Kaioken_x100.SuffixQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x100.PrefixQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x100.MiddleQuote").replace("&", "§"));
+              player.sendMessage(getConfig().getString("Kaioken_x100.SuffixQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Kaioken_x100.Use_Traits?.DAMAGE_RESISTANCE")) {
               player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -2817,7 +2817,7 @@ public class Main
                 player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 
                   (int)(getConfig().getInt("Kaioken_x100.Kaioken_Cooldown") * 20L), 0));
               }
-              player.sendMessage(getConfig().getString("Kaioken_x100.DamageTakenQuote").replace("&", "�"));
+              player.sendMessage(getConfig().getString("Kaioken_x100.DamageTakenQuote").replace("&", "§"));
             }
             if (getConfig().getBoolean("Sound_Effect")) {
               player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
@@ -2872,17 +2872,17 @@ public class Main
               if (getConfig().getBoolean("Super_Kaioken.Broadcast"))
               {
                 Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.WHITE + ": " + 
-                  getConfig().getString("Super_Kaioken.PrefixQuote").replace("&", "�"));
+                  getConfig().getString("Super_Kaioken.PrefixQuote").replace("&", "§"));
                 Bukkit.broadcastMessage(
-                  getConfig().getString("Super_Kaioken.MiddleQuote").replace("&", "�"));
+                  getConfig().getString("Super_Kaioken.MiddleQuote").replace("&", "§"));
                 Bukkit.broadcastMessage(
-                  getConfig().getString("Super_Kaioken.SuffixQuote").replace("&", "�"));
+                  getConfig().getString("Super_Kaioken.SuffixQuote").replace("&", "§"));
               }
               else if (!getConfig().getBoolean("Super_Kaioken.Broadcast"))
               {
-                player.sendMessage(getConfig().getString("Super_Kaioken.PrefixQuote").replace("&", "�"));
-                player.sendMessage(getConfig().getString("Super_Kaioken.MiddleQuote").replace("&", "�"));
-                player.sendMessage(getConfig().getString("Super_Kaioken.SuffixQuote").replace("&", "�"));
+                player.sendMessage(getConfig().getString("Super_Kaioken.PrefixQuote").replace("&", "§"));
+                player.sendMessage(getConfig().getString("Super_Kaioken.MiddleQuote").replace("&", "§"));
+                player.sendMessage(getConfig().getString("Super_Kaioken.SuffixQuote").replace("&", "§"));
               }
               if (getConfig().getBoolean("Super_Kaioken.Use_Traits?.DAMAGE_RESISTANCE")) {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -2956,7 +2956,7 @@ public class Main
                     (int)(getConfig().getInt("Super_Kaioken.Kaioken_Cooldown") * 20L), 0));
                 }
                 player.sendMessage(
-                  getConfig().getString("Super_Kaioken.DamageTakenQuote").replace("&", "�"));
+                  getConfig().getString("Super_Kaioken.DamageTakenQuote").replace("&", "§"));
               }
               if (getConfig().getBoolean("Lightning_Effect")) {
                 player.getWorld().strikeLightning(player.getLocation());
@@ -3018,20 +3018,20 @@ public class Main
               if (getConfig().getBoolean("Kaioken_Super_Saiyan_Blue_1_x10.Broadcast"))
               {
                 Bukkit.broadcastMessage(player.getDisplayName() + ": " + getConfig()
-                  .getString("Kaioken_Super_Saiyan_Blue_1_x10.PrefixQuote").replace("&", "�"));
+                  .getString("Kaioken_Super_Saiyan_Blue_1_x10.PrefixQuote").replace("&", "§"));
                 Bukkit.broadcastMessage(getConfig().getString("Kaioken_Super_Saiyan_Blue_1_x10.MiddleQuote")
-                  .replace("&", "�"));
+                  .replace("&", "§"));
                 Bukkit.broadcastMessage(getConfig().getString("Kaioken_Super_Saiyan_Blue_1_x10.SuffixQuote")
-                  .replace("&", "�"));
+                  .replace("&", "§"));
               }
               else if (!getConfig().getBoolean("Kaioken_Super_Saiyan_Blue_1_x10.Broadcast"))
               {
                 player.sendMessage(getConfig().getString("Kaioken_Super_Saiyan_Blue_1_x10.PrefixQuote")
-                  .replace("&", "�"));
+                  .replace("&", "§"));
                 player.sendMessage(getConfig().getString("Kaioken_Super_Saiyan_Blue_1_x10.MiddleQuote")
-                  .replace("&", "�"));
+                  .replace("&", "§"));
                 player.sendMessage(getConfig().getString("Kaioken_Super_Saiyan_Blue_1_x10.SuffixQuote")
-                  .replace("&", "�"));
+                  .replace("&", "§"));
               }
               if (getConfig().getBoolean("Kaioken_Super_Saiyan_Blue_1_x10.Use_Traits?.DAMAGE_RESISTANCE")) {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 
@@ -3107,7 +3107,7 @@ public class Main
                     0));
                 }
                 player.sendMessage(getConfig().getString("Kaioken_Super_Saiyan_Blue_1_x10.DamageTakenQuote")
-                  .replace("&", "�"));
+                  .replace("&", "§"));
               }
               if (getConfig().getBoolean("Lightning_Effect")) {
                 player.getWorld().strikeLightning(player.getLocation());

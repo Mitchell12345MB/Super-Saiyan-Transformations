@@ -1,4 +1,4 @@
-package main;
+package main.SSJ;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

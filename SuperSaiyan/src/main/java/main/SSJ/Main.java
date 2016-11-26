@@ -1076,7 +1076,7 @@ public class Main extends JavaPlugin {
 					}
 					player.sendMessage(this.Prefix + ChatColor.GREEN + "You're now on a " + ChatColor.RED
 							+ this.Cooldown + ChatColor.GREEN + " second cooldown!");
-					player.performCommand("pp effect clear");
+					player.performCommand("pp effect none");
 					this.cooldownTime.put(player, Integer.valueOf(this.Cooldown));
 					this.cooldownTask.put(player, new BukkitRunnable() {
 						public void run() {
@@ -1751,7 +1751,7 @@ public class Main extends JavaPlugin {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 								}
-								player.performCommand("pp effect clear");
+								player.performCommand("pp effect none");
 							}
 						}, getConfig().getInt("Kaioken_x1.Kaioken_Cooldown") * 20L);
 						if (this.rand.nextInt(100) <= getConfig().getInt("Kaioken_x1.DamageOdds")) {
@@ -1871,7 +1871,7 @@ public class Main extends JavaPlugin {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 								}
-								player.performCommand("pp effect clear");
+								player.performCommand("pp effect none");
 							}
 						}, getConfig().getInt("Kaioken_x2.Kaioken_Cooldown") * 20L);
 						if (this.rand.nextInt(100) <= getConfig().getInt("Kaioken_x2.DamageOdds")) {
@@ -1991,7 +1991,7 @@ public class Main extends JavaPlugin {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 								}
-								player.performCommand("pp effect clear");
+								player.performCommand("pp effect none");
 							}
 						}, getConfig().getInt("Kaioken_x3.Kaioken_Cooldown") * 20L);
 						if (this.rand.nextInt(100) <= getConfig().getInt("Kaioken_x3.DamageOdds")) {
@@ -2111,7 +2111,7 @@ public class Main extends JavaPlugin {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 								}
-								player.performCommand("pp effect clear");
+								player.performCommand("pp effect none");
 							}
 						}, getConfig().getInt("Kaioken_x4.Kaioken_Cooldown") * 20L);
 						if (this.rand.nextInt(100) <= getConfig().getInt("Kaioken_x4.DamageOdds")) {
@@ -2231,7 +2231,7 @@ public class Main extends JavaPlugin {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 								}
-								player.performCommand("pp effect clear");
+								player.performCommand("pp effect none");
 							}
 						}, getConfig().getInt("Kaioken_x20.Kaioken_Cooldown") * 20L);
 						if (this.rand.nextInt(100) <= getConfig().getInt("Kaioken_x20.DamageOdds")) {
@@ -2351,7 +2351,7 @@ public class Main extends JavaPlugin {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 								}
-								player.performCommand("pp effect clear");
+								player.performCommand("pp effect none");
 							}
 						}, getConfig().getInt("Kaioken_x30.Kaioken_Cooldown") * 20L);
 						if (this.rand.nextInt(100) <= getConfig().getInt("Kaioken_x30.DamageOdds")) {
@@ -2471,7 +2471,7 @@ public class Main extends JavaPlugin {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 								}
-								player.performCommand("pp effect clear");
+								player.performCommand("pp effect none");
 							}
 						}, getConfig().getInt("Kaioken_x40.Kaioken_Cooldown") * 20L);
 						if (this.rand.nextInt(100) <= getConfig().getInt("Kaioken_x40.DamageOdds")) {
@@ -2591,7 +2591,7 @@ public class Main extends JavaPlugin {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 								}
-								player.performCommand("pp effect clear");
+								player.performCommand("pp effect none");
 							}
 						}, getConfig().getInt("Kaioken_x50.Kaioken_Cooldown") * 20L);
 						if (this.rand.nextInt(100) <= getConfig().getInt("Kaioken_x50.DamageOdds")) {
@@ -2713,7 +2713,7 @@ public class Main extends JavaPlugin {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 								}
-								player.performCommand("pp effect clear");
+								player.performCommand("pp effect none");
 							}
 						}, getConfig().getInt("Kaioken_x100.Kaioken_Cooldown") * 20L);
 						if (this.rand.nextInt(100) <= getConfig().getInt("Kaioken_x100.DamageOdds")) {
@@ -2843,7 +2843,7 @@ public class Main extends JavaPlugin {
 										player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT,
 												1.0F, 2.0F);
 									}
-									player.performCommand("pp effect clear");
+									player.performCommand("pp effect none");
 								}
 							}, getConfig().getInt("Super_Kaioken.Kaioken_Cooldown") * 20L);
 							if (this.rand.nextInt(100) <= getConfig().getInt("Super_Kaioken.DamageOdds")) {
@@ -2981,7 +2981,7 @@ public class Main extends JavaPlugin {
 										player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT,
 												1.0F, 2.0F);
 									}
-									player.performCommand("pp effect clear");
+									player.performCommand("pp effect none");
 								}
 							}, getConfig().getInt("Kaioken_Super_Saiyan_Blue_1_x10.Kaioken_Cooldown") * 20L);
 							if (this.rand.nextInt(100) <= getConfig()

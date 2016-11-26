@@ -781,16 +781,16 @@ Super_Saiyan_Rose_1:
  DamageTakenQuote: "&cI really botched this one huh?"
  Traits:
  # Please do not add negative numbers to traits!
-  DAMAGE_RESISTANCE: 7
-  FAST_DIGGING: 35
-  FIRE_RESISTANCE: 35
-  HEAL: 35
-  INCREASE_DAMAGE: 7
-  JUMP: 35
-  REGENERATION: 35
-  SATURATION: 35
-  SPEED: 35
-  HEALTH_BOOST: 7
+  DAMAGE_RESISTANCE: 8
+  FAST_DIGGING: 36
+  FIRE_RESISTANCE: 36
+  HEAL: 36
+  INCREASE_DAMAGE: 8
+  JUMP: 36
+  REGENERATION: 36
+  SATURATION: 36
+  SPEED: 36
+  HEALTH_BOOST: 8
  Use_Traits?:
   DAMAGE_RESISTANCE: true
   FAST_DIGGING: true

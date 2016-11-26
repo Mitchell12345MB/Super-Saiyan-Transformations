@@ -1,6 +1,6 @@
 name: SuperSaiyan
 author: Mitchelll
-version: 11.3
+version: 11.5
 description: It's a Super Saiyan plugin!
 main: main.SSJ.Main
 commands:

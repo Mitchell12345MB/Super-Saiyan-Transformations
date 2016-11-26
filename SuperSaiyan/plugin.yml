@@ -2,7 +2,7 @@ name: SuperSaiyan
 author: Mitchelll
 version: 11.3
 description: It's a Super Saiyan plugin!
-main: main.Main
+main: main.SSJ.Main
 commands:
   false:
     description: False Super Saiyan Transformation
@@ -14,6 +14,9 @@ commands:
   ssb:
     description: Turns you into a Super Saiyan Blue!
     permission: ssj.ssb
+  ssr:
+    description: Turns you into a Super Saiyan Rose!
+    permission: ssj.ssr
   potential:
     description: Brings out your raw potential!
     permission: ssj.potential

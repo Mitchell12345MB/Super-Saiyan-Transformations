@@ -706,8 +706,8 @@ Super_Saiyan_5:
 
 Super_Saiyan_God:
  PrefixQuote: ""
- MiddleQuote: "&6-Turns Super Saiyan God-"
- SuffixQuote: "&6This power... It's... Overwhelming."
+ MiddleQuote: "&4-Turns Super Saiyan God-"
+ SuffixQuote: "&4This power... It's... Overwhelming."
  Broadcast: true
  # Cooldown: 0
  DamageOdds: 5
@@ -738,9 +738,42 @@ Super_Saiyan_God:
   HEALTH_BOOST: true
 
 Super_Saiyan_Blue_1:
- PrefixQuote: "&6AAAAAAAAAAAAAAHH!!!"
- MiddleQuote: "&6-Turns Super Saiyan Blue 1-"
- SuffixQuote: ""
+ PrefixQuote: "&3AAAAAAAAAAAAAAHH!!!"
+ MiddleQuote: "&3-Turns Super Saiyan Blue 1-"
+ SuffixQuote: "&3I've been a super saiyan for years, now I too have the power of a god!"
+ Broadcast: true
+ # Cooldown: 0
+ DamageOdds: 25
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 7
+  FAST_DIGGING: 35
+  FIRE_RESISTANCE: 35
+  HEAL: 35
+  INCREASE_DAMAGE: 7
+  JUMP: 35
+  REGENERATION: 35
+  SATURATION: 35
+  SPEED: 35
+  HEALTH_BOOST: 7
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+  
+Super_Saiyan_Rose_1:
+ PrefixQuote: "&5AAAAAAAAAAAAAAHH!!!"
+ MiddleQuote: "&5-Turns Super Saiyan Rose 1-"
+ SuffixQuote: "&5How is this colour. Isn't it beautiful?"
  Broadcast: true
  # Cooldown: 0
  DamageOdds: 25
@@ -771,9 +804,9 @@ Super_Saiyan_Blue_1:
   HEALTH_BOOST: true
 
 Kaioken_Super_Saiyan_Blue_1_x10:
- PrefixQuote: "&6AAAAAAHH... KAIOKEEN.... TIMES... 10!!!"
- MiddleQuote: "&6-Super Kaioken Blue Attack x10-"
- SuffixQuote: ""
+ PrefixQuote: "&cAAAAAAHH... KAIOKEEN.... TIMES... 10!!!"
+ MiddleQuote: "&c-Super Kaioken Blue Attack x10-"
+ SuffixQuote: "&cThis... this is my trump card!"
  Broadcast: true
  # Cooldown: 0
  DamageOdds: 90

@@ -1030,6 +1030,15 @@ public class Main extends JavaPlugin {
 									+ ChatColor.GOLD + getConfig().getInt("Super_Saiyan_Blue_1.DamageTaken"));
 							player.sendMessage(ChatColor.RED + "----------------------------------------------");
 						}
+						if (player.hasPermission("ssj.ssr")) {
+							player.sendMessage(ChatColor.BLUE + "[ssr] [1] [Super Saiyan Rose] [x350]");
+							player.sendMessage(ChatColor.RED + "Chance of failing this transformation: "
+									+ ChatColor.GOLD + getConfig().getInt("Super_Saiyan_Rose_1.DamageOdds")
+									+ ChatColor.RED + " %");
+							player.sendMessage(ChatColor.RED + "Damage taken if transformed incorrectly: "
+									+ ChatColor.GOLD + getConfig().getInt("Super_Saiyan_Rose_1.DamageTaken"));
+							player.sendMessage(ChatColor.RED + "----------------------------------------------");
+						}
 					} else if (args[0].equalsIgnoreCase("info")) {
 						player.sendMessage(ChatColor.RED + "Super Saiyan Transformations info:");
 						player.sendMessage(

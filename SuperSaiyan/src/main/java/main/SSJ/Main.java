@@ -708,6 +708,114 @@ public class Main extends JavaPlugin {
 						((BukkitRunnable) this.cooldownTask.get(player)).runTaskTimer(this, 20L, 20L);
 						return true;
 					}
+					if ((args[0].equalsIgnoreCase("rage")) && (player.hasPermission("ssj.rage"))) {
+						if (this.cooldownTime.containsKey(player)) {
+							player.sendMessage(this.Prefix + ChatColor.RED + "You must wait for "
+									+ this.cooldownTime.get(player) + " seconds.");
+							return true;
+						}
+						player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
+						player.removePotionEffect(PotionEffectType.FAST_DIGGING);
+						player.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
+						player.removePotionEffect(PotionEffectType.HEAL);
+						player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
+						player.removePotionEffect(PotionEffectType.JUMP);
+						player.removePotionEffect(PotionEffectType.REGENERATION);
+						player.removePotionEffect(PotionEffectType.SATURATION);
+						player.removePotionEffect(PotionEffectType.SPEED);
+						player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Broadcast")) {
+							Bukkit.broadcastMessage(player.getDisplayName() + ": "
+									+ getConfig().getString("Super_Saiyan_Rage.PrefixQuote").replace("&", "§"));
+							Bukkit.broadcastMessage(
+									getConfig().getString("Super_Saiyan_Rage.MiddleQuote").replace("&", "§"));
+							Bukkit.broadcastMessage(
+									getConfig().getString("Super_Saiyan_Rage.SuffixQuote").replace("&", "§"));
+						} else if (!getConfig().getBoolean("Super_Saiyan_Rage.Broadcast")) {
+							player.sendMessage(getConfig().getString("Super_Saiyan_Rage.PrefixQuote").replace("&", "§"));
+							player.sendMessage(getConfig().getString("Super_Saiyan_Rage.MiddleQuote").replace("&", "§"));
+							player.sendMessage(getConfig().getString("Super_Saiyan_Rage.SuffixQuote").replace("&", "§"));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.DAMAGE_RESISTANCE")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.DAMAGE_RESISTANCE")));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.FAST_DIGGING")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 100000000,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.FAST_DIGGING")));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.FIRE_RESISTANCE")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 100000000,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.FIRE_RESISTANCE")));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.HEAL")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 50,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.HEAL")));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.INCREASE_DAMAGE")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 100000000,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.INCREASE_DAMAGE")));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.JUMP")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 100000000,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.JUMP")));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.REGENERATION")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1000,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.REGENERATION")));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.SATURATION")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 100000000,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.SATURATION")));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.SPEED")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100000000,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.SPEED")));
+						}
+						if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.HEALTH_BOOST")) {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000,
+									getConfig().getInt("Super_Saiyan_Rage.Traits.HEALTH_BOOST")));
+						}
+						if (this.rand.nextInt(100) <= getConfig().getInt("Super_Saiyan_Rage.DamageOdds")) {
+							player.setLastDamage(getConfig().getInt("Super_Saiyan_Rage.DamageTaken"));
+							player.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
+							player.removePotionEffect(PotionEffectType.HEAL);
+							player.removePotionEffect(PotionEffectType.REGENERATION);
+							player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
+							if (getConfig().getBoolean("Super_Saiyan_Rage.Use_Traits?.HEALTH_BOOST")) {
+								player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
+							}
+							player.sendMessage(
+									getConfig().getString("Super_Saiyan_Rage.DamageTakenQuote").replace("&", "§"));
+						}
+						if (getConfig().getBoolean("Lightning_Effect")) {
+							player.getWorld().strikeLightning(player.getLocation());
+						}
+						if (getConfig().getBoolean("Explosion_Effect")) {
+							player.getWorld().createExplosion(player.getLocation(),
+									getConfig().getInt("Explosion_Radious"));
+						}
+						if (getConfig().getBoolean("Sound_Effect")) {
+							player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F, 2.0F);
+						}
+						player.sendMessage(this.Prefix + ChatColor.GREEN + "You're now on a " + ChatColor.RED
+								+ this.Cooldown + ChatColor.GREEN + " second cooldown!");
+						player.performCommand("pp effect magiccrit");
+						this.cooldownTime.put(player, Integer.valueOf(this.Cooldown));
+						this.cooldownTask.put(player, new BukkitRunnable() {
+							public void run() {
+								Main.this.cooldownTime.put(player,
+										Integer.valueOf(((Integer) Main.this.cooldownTime.get(player)).intValue() - 1));
+								if (((Integer) Main.this.cooldownTime.get(player)).intValue() == 0) {
+									Main.this.cooldownTime.remove(player);
+									Main.this.cooldownTask.remove(player);
+									cancel();
+								}
+							}
+						});
+						((BukkitRunnable) this.cooldownTask.get(player)).runTaskTimer(this, 20L, 20L);
+						return true;
+					}
 					if ((args[0].equalsIgnoreCase("god")) && (player.hasPermission("ssj.god"))) {
 						if (this.cooldownTime.containsKey(player)) {
 							player.sendMessage(this.Prefix + ChatColor.RED + "You must wait for "
@@ -1010,6 +1118,15 @@ public class Main extends JavaPlugin {
 											+ getConfig().getInt("Super_Saiyan_5.DamageOdds") + ChatColor.RED + " %");
 							player.sendMessage(ChatColor.RED + "Damage taken if transformed incorrectly: "
 									+ ChatColor.GOLD + getConfig().getInt("Super_Saiyan_5.DamageTaken"));
+							player.sendMessage(ChatColor.RED + "----------------------------------------------");
+						}
+						if (player.hasPermission("ssj.rage")) {
+							player.sendMessage(ChatColor.BLUE + "[rage] [Super Saiyan Rage] [x275]");
+							player.sendMessage(
+									ChatColor.RED + "Chance of failing this transformation: " + ChatColor.GOLD
+											+ getConfig().getInt("Super_Saiyan_Rage.DamageOdds") + ChatColor.RED + " %");
+							player.sendMessage(ChatColor.RED + "Damage taken if transformed incorrectly: "
+									+ ChatColor.GOLD + getConfig().getInt("Super_Saiyan_Rage.DamageTaken"));
 							player.sendMessage(ChatColor.RED + "----------------------------------------------");
 						}
 						if (player.hasPermission("ssj.god")) {

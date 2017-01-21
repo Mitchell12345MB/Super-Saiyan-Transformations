@@ -837,4 +837,36 @@ Kaioken_Super_Saiyan_Blue_1_x10:
   SPEED: true
   HEALTH_BOOST: true
   
+Super_Saiyan_Rage:
+ PrefixQuote: "&6If you call it a sin, then FINE! AAAAAAAAAAAHHHHH!!!"
+ MiddleQuote: "&6-Turns Super Saiyan Rage-"
+ SuffixQuote: "&6Black! I...WILL KILL YOU!!!"
+ Broadcast: true
+ # Cooldown: 0
+ DamageOdds: 50
+ DamageTaken: 18
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 8
+  FAST_DIGGING: 30
+  FIRE_RESISTANCE: 30
+  HEAL: 30
+  INCREASE_DAMAGE: 8
+  JUMP: 30
+  REGENERATION: 30
+  SATURATION: 30
+  SPEED: 30
+  HEALTH_BOOST: 8
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
 #ssw...

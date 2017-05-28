@@ -17,7 +17,7 @@ Prefix: "&c[&bSuper Saiyan PL&c] "
 Teleportation_Removal: true
 
 # Control the cooldown between transformations (Do not put below 1)!
-Cooldown_Timer: 1
+Cooldown_Timer: 30
 
 # This true or false the lightning effect when transforming.
 Lightning_Effect: true

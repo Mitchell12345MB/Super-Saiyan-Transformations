@@ -1,30 +1,10 @@
 name: SuperSaiyan
-author: Mitchelll
-version: 11.5
-description: It's a Super Saiyan plugin!
+author: Mitchelll, Noorquacker
+version: 12
+description: Turns you into a Super Saiyan!
 main: main.SSJ.Main
 commands:
-  false:
-    description: False Super Saiyan Transformation
-    permission: ssj.false
   ssj:
     description: Turns you into a Super Saiyan!
   kaioken:
     description: Kaioken Attack.
-  ssb:
-    description: Turns you into a Super Saiyan Blue!
-    permission: ssj.ssb
-  ssr:
-    description: Turns you into a Super Saiyan Rose!
-    permission: ssj.ssr
-  potential:
-    description: Brings out your raw potential!
-    permission: ssj.potential
-  ultimate:
-    description: A level beyond a super saiyan 1, but below super saiyan 2.
-    permission: ssj.ultimate
-  legendary:
-    description: It's... the legendary super sayan!
-    permission: ssj.legendary
-  base:
-    description: Your base form.

@@ -44,10 +44,10 @@ public class Main extends JavaPlugin {
 	}
 	ArrayList<Player> cooldown = new ArrayList<Player>();
 	int Cooldown = getConfig().getInt("Cooldown_Timer");
-	String Prefix = getConfig().getString("Prefix").replace("&", "ง");
+	String Prefix = getConfig().getString("Prefix").replace("&", "ยง");
 
 	//A bunch of junk that was here previously and exists to handle what the player said
-	//These comments as of v12 are only by Noorquacker. It's not hard to write two slashes and write a message...
+	//These comments as of v12 are only by Noorquacker.
 	public boolean onCommand(CommandSender sender, Command cmd, String Label, String[] args) {
 		if ((sender instanceof Player)) {
 			final Player player = (Player) sender;
@@ -75,9 +75,9 @@ public class Main extends JavaPlugin {
 					player.removePotionEffect(PotionEffectType.SPEED);
 					player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
 					player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
-					player.sendMessage(getConfig().getString("Base_Form.PrefixQuote").replace("&","ง"));
-					player.sendMessage(getConfig().getString("Base_Form.MiddleQuote").replace("&","ง"));
-					player.sendMessage(getConfig().getString("Base_Form.SuffixQuote").replace("&","ง"));
+					player.sendMessage(getConfig().getString("Base_Form.PrefixQuote").replace("&","ยง"));
+					player.sendMessage(getConfig().getString("Base_Form.MiddleQuote").replace("&","ยง"));
+					player.sendMessage(getConfig().getString("Base_Form.SuffixQuote").replace("&","ยง"));
 				}
 				//Loop through the list of known SSJ's to match
 				for(int i = 0; i < ssjList.size(); i++) {
@@ -106,14 +106,14 @@ public class Main extends JavaPlugin {
 							player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
 							//Send chat stuff
 							if(getConfig().getBoolean(getConfig().getString(ssj + ".CommandName"))) {
-								Bukkit.broadcastMessage(player.getDisplayName() + ": " + getConfig().getString(ssj+".PrefixQuote").replace("&", "ง"));
-								Bukkit.broadcastMessage(player.getDisplayName() + ": " + getConfig().getString(ssj+".MiddleQuote").replace("&", "ง"));
-								Bukkit.broadcastMessage(player.getDisplayName() + ": " + getConfig().getString(ssj+".SuffixQuote").replace("&", "ง"));
+								Bukkit.broadcastMessage(player.getDisplayName() + ": " + getConfig().getString(ssj+".PrefixQuote").replace("&", "ยง"));
+								Bukkit.broadcastMessage(player.getDisplayName() + ": " + getConfig().getString(ssj+".MiddleQuote").replace("&", "ยง"));
+								Bukkit.broadcastMessage(player.getDisplayName() + ": " + getConfig().getString(ssj+".SuffixQuote").replace("&", "ยง"));
 							}
 							else{
-								player.sendMessage(getConfig().getString(ssj+".PrefixQuote").replace("&", "ง"));
-								player.sendMessage(getConfig().getString(ssj+".MiddleQuote").replace("&", "ง"));
-								player.sendMessage(getConfig().getString(ssj+".SuffixQuote").replace("&", "ง"));
+								player.sendMessage(getConfig().getString(ssj+".PrefixQuote").replace("&", "ยง"));
+								player.sendMessage(getConfig().getString(ssj+".MiddleQuote").replace("&", "ยง"));
+								player.sendMessage(getConfig().getString(ssj+".SuffixQuote").replace("&", "ยง"));
 							}
 							if (getConfig().getBoolean(ssj+".Use_Traits?.DAMAGE_RESISTANCE")) {
 								player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000,
@@ -165,7 +165,7 @@ public class Main extends JavaPlugin {
 									player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
 								}
 								player.sendMessage(
-										getConfig().getString(ssj+".DamageTakenQuote").replace("&", "ง"));
+										getConfig().getString(ssj+".DamageTakenQuote").replace("&", "ยง"));
 							}
 							if (getConfig().getBoolean("Lightning_Effect")) {
 								player.getWorld().strikeLightning(player.getLocation());
@@ -195,7 +195,7 @@ public class Main extends JavaPlugin {
 								}
 							});
 							((BukkitRunnable) this.cooldownTask.get(player)).runTaskTimer(this, 20L, 20L);
-							player.sendMessage(getConfig().getString("Prefix").replace("&", "ง")+"You're now on a "+getConfig().getInt("Cooldown_Timer")+" second cooldown");
+							player.sendMessage(getConfig().getString("Prefix").replace("&", "ยง")+"You're now on a "+getConfig().getInt("Cooldown_Timer")+" second cooldown");
 							return true;
 						}
 						else{player.sendMessage(ChatColor.DARK_RED+"You do not have permission to perform this command.");}
@@ -220,8 +220,6 @@ public class Main extends JavaPlugin {
 							player.sendMessage(ChatColor.RED + "----------------------------------------------");
 						}
 					}
-					//Yeah, I know, they're copied and pasted.
-					//Better than V11.
 					for(int i = 0; i < kaiokenList.size(); i++) {
 						String ssj = kaiokenList.get(i);
 						if (player.hasPermission("ssj."+getConfig().getString(ssj+".CommandName"))) {
@@ -267,14 +265,14 @@ public class Main extends JavaPlugin {
 							player.removePotionEffect(PotionEffectType.SPEED);
 							player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
 							if(getConfig().getBoolean(kaioken+".Broadcast")) {
-								Bukkit.broadcastMessage(player.getDisplayName() + ": "+ getConfig().getString(kaioken+".PrefixQuote").replace("&", "ง"));
-								Bukkit.broadcastMessage(player.getDisplayName() + ": "+ getConfig().getString(kaioken+".MiddleQuote").replace("&", "ง"));
-								Bukkit.broadcastMessage(player.getDisplayName() + ": "+ getConfig().getString(kaioken+".SuffixQuote").replace("&", "ง"));
+								Bukkit.broadcastMessage(player.getDisplayName() + ": "+ getConfig().getString(kaioken+".PrefixQuote").replace("&", "ยง"));
+								Bukkit.broadcastMessage(player.getDisplayName() + ": "+ getConfig().getString(kaioken+".MiddleQuote").replace("&", "ยง"));
+								Bukkit.broadcastMessage(player.getDisplayName() + ": "+ getConfig().getString(kaioken+".SuffixQuote").replace("&", "ยง"));
 							}
 							else{
-								player.sendMessage(getConfig().getString(kaioken+".PrefixQuote").replace("&", "ง"));
-								player.sendMessage(getConfig().getString(kaioken+".MiddleQuote").replace("&", "ง"));
-								player.sendMessage(getConfig().getString(kaioken+".SuffixQuote").replace("&", "ง"));
+								player.sendMessage(getConfig().getString(kaioken+".PrefixQuote").replace("&", "ยง"));
+								player.sendMessage(getConfig().getString(kaioken+".MiddleQuote").replace("&", "ยง"));
+								player.sendMessage(getConfig().getString(kaioken+".SuffixQuote").replace("&", "ยง"));
 							}
 							if (getConfig().getBoolean(kaioken+".Use_Traits?.DAMAGE_RESISTANCE")) {
 								player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000,
@@ -326,7 +324,7 @@ public class Main extends JavaPlugin {
 									player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
 								}
 								player.sendMessage(
-										getConfig().getString(kaioken+".DamageTakenQuote").replace("&", "ง"));
+										getConfig().getString(kaioken+".DamageTakenQuote").replace("&", "ยง"));
 							}
 							if (getConfig().getBoolean("Lightning_Effect")) {
 								player.getWorld().strikeLightning(player.getLocation());
@@ -352,7 +350,7 @@ public class Main extends JavaPlugin {
 							});
 							((BukkitRunnable) this.cooldownTask.get(player)).runTaskTimer(this, 20L, 20L);
 							//Kaioken cooldown
-							player.sendMessage(getConfig().getString("Prefix").replace("&", "ง")+"You're now on a "+getConfig().getInt("Cooldown_Timer")+" second cooldown");
+							player.sendMessage(getConfig().getString("Prefix").replace("&", "ยง")+"You're now on a "+getConfig().getInt("Cooldown_Timer")+" second cooldown");
 							getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
 								public void run() {
 									player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
@@ -394,5 +392,3 @@ public class Main extends JavaPlugin {
 		return false;
 	}
 }
-
-//HA! Not even at 400 lines! Beat that Mitchell!

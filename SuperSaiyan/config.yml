@@ -13,7 +13,7 @@ version: 12
 # The prefix when the plugin send you a message.
 Prefix: "&c[&bSuper Saiyan PL&c] "
 
-# Remove their transformation when they teleport via command or plugin?
+# Remove their transformation when they teleport via command or plugin.
 Teleportation_Removal: true
 
 # Control the cooldown between transformations (Do not put below 1)!
@@ -1011,5 +1011,3 @@ Super_Saiyan_Rage:
   SATURATION: true
   SPEED: true
   HEALTH_BOOST: true
-#ssw...
-#(Can now be added without any code changes :D)

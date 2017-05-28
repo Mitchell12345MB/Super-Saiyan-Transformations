@@ -1,0 +1,1015 @@
+# Contact Mitchell on the plugin page if you need help.
+# Plugin page: http://bit.ly/1SMxY8S
+
+# DO NOT CHANGE THIS UNDER ANY CIRCUMSTANCE (Will reset your config)
+version: 12
+
+#####################################################
+#                                                   #
+#    Configurations & Enabling/Disabling effects    #
+#                                                   #
+#####################################################
+
+# The prefix when the plugin send you a message.
+Prefix: "&c[&bSuper Saiyan PL&c] "
+
+# Remove their transformation when they teleport via command or plugin?
+Teleportation_Removal: true
+
+# Control the cooldown between transformations (Do not put below 1)!
+Cooldown_Timer: 1
+
+# This true or false the lightning effect when transforming.
+Lightning_Effect: true
+
+# This true or false the explosion effect when transforming
+Explosion_Effect: true
+
+# If the Explosion_Effect is set to "true", then you have the option to make blocks around you expload when transforming.
+# (Leave "0" if you just want the effect).
+Explosion_Radious: 0
+
+# This true or false the sound when transforming (Sound: Ghast Firing)
+Sound_Effect: True
+
+##############################
+#                            #
+#    Useful Links & Tools    #
+#                            #
+##############################
+
+# Chat Color Template: http://wiki.ess3.net/mc/
+
+# Player Particles Link: http://bit.ly/29HHadu
+
+#####################################
+#                                   #
+#    Setting for transformations    #
+#                                   #
+#####################################
+
+# [CommandName] This is what you will type after "/ssj " or "/kaioken ", transforming you into whatever you specified.
+# [Desc] This is the name of the transformation in /ssj list, such as "Super Saiyan Rose".
+# [DescBoost] This is the multiplier/boost that the transformation will give you.
+#             SPECIAL NOTE for DescBoost: It is actually a placebo and does not affect anything whatsoever. As of V11 it does not match with the potion effect linearly. Therefore, it doesn't matter.
+# [Particle] This is the particle effect that will be applied when you tranform, if PlayerParticles is installed.
+# [PrefixQuote] This goes before the -Turns (Transformation)- or -Kaioken x(transformation)-. Leave blank if you don't want to use it.
+# [MiddleQuote] This announces what transformation you just did. I.E. "-Turns Super Saiyan 1-" or "-Kaioken attack x1-." Leave blank to disable this.
+# [SuffixQuote] This goes after the -Turns (Transformation)- or -Kaioken x(transformation)-. Leave blank if you don't want to use it.
+# [Broadcast] If you want to broadcast the quote along with the player name that transformed, replace "false" with "true."
+# [# Cooldown] This is if you want to add a custome cooldown when exicuting a certain transformation (leave "0" to diable)
+# [Kaioken_# Cooldown] This is the time it takes for the kaioken transformation to wear off. (do not go negative) (Only for kaioken commands)
+# [DamageOdds] Random damage taken when transforming. (0 - 5), (Leave "0" to false).
+# [DamageTaken] How much damage it would take from you if the odds weren't in your favor. (and if DamageOdds is enabled) (0 - 10), (Leave "0" to false if you just want traits to be effected).
+# [DamageTakenQuote] Quote when you transform wrong.
+# [Traits] Under traits, if you don't want a trait to be multiplied, then leave "0." If you want to disable it, then put "false" where the "0" or number is.
+# [Use Traits?] This is if you want to use certain traits for a certain transformation and vise versa.
+
+#####################################
+#                                   #
+#    Adding new transformations     #
+#                                   #
+#####################################
+
+# In the following Transformation_List section, add new transformation that you want to add
+# Then copy and paste something like Kaioken_x1 or Super_Saiyan_1 and rename it to your new transformation and
+# modify it like the above.
+# Note that the permission will be "ssj.<TRANSFORMATION NAME>"
+# If your transformation is permanent, add it to SuperSaiyans and it will be available by /ssj, otherwise
+# add it to Kaiokens and it will be temporary and accessible by /kaioken.
+
+Transformation_List:
+ SuperSaiyans:
+  - Super_Saiyan_1
+  - Super_Saiyan_2
+  - Super_Saiyan_3
+  - Super_Saiyan_4
+  - Super_Saiyan_5
+  - False_Super_Saiyan
+  - Ultimate_Super_Saiyan
+  - Legendary_Super_Saiyan_1
+  - Super_Saiyan_God
+  - Super_Saiyan_Blue_1
+  - Super_Saiyan_Rose_1
+  - Potential_Unleashed
+  - Super_Saiyan_Rage
+ Kaiokens:
+  - Kaioken_x1
+  - Kaioken_x2
+  - Kaioken_x3
+  - Kaioken_x4
+  - Kaioken_x20
+  - Kaioken_x30
+  - Kaioken_x40
+  - Kaioken_x50
+  - Kaioken_x100
+  - Super_Kaioken
+  - Kaioken_Super_Saiyan_Blue_1_x10
+  
+
+Base_Form:
+ PrefixQuote: "&6Looks like I don't need to transform after all..."
+ MiddleQuote: "&6-Goes into base form-"
+ SuffixQuote: ""
+ Broadcast: false
+
+Kaioken_x1:
+ CommandName: "x1"
+ Desc: "Kaioken Transformation"
+ DescBoost: "+100"
+ Particle: "reddust"
+ PrefixQuote: "&6Kaioken!"
+ MiddleQuote: "&6-Kaioken Attack x1-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 10
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 20
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 1
+  FAST_DIGGING: 1
+  FIRE_RESISTANCE: 1
+  HEAL: 1
+  INCREASE_DAMAGE: 1
+  JUMP: 1
+  REGENERATION: 1
+  SATURATION: 1
+  SPEED: 1
+  HEALTH_BOOST: 1
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+  
+Kaioken_x2:
+ CommandName: "x2"
+ Desc: "Kaioken Transformation"
+ DescBoost: "+200"
+ Particle: "reddust"
+ PrefixQuote: "&6Kaioken.. Times... 2!!!!"
+ MiddleQuote: "&6-Kaioken Attack x2-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 15
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 25
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 1
+  FAST_DIGGING: 1
+  FIRE_RESISTANCE: 1
+  HEAL: 1
+  INCREASE_DAMAGE: 1
+  JUMP: 1
+  REGENERATION: 1
+  SATURATION: 1
+  SPEED: 1
+  HEALTH_BOOST: 1
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Kaioken_x3:
+ CommandName: "x3"
+ Desc: "Kaioken Transformation"
+ DescBoost: "+300"
+ Particle: "reddust"
+ PrefixQuote: "&6Kaioken... Times... 3!!!!!"
+ MiddleQuote: "&6-Kaioken Attack x3-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 20
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 25
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 2
+  FAST_DIGGING: 2
+  FIRE_RESISTANCE: 2
+  HEAL: 2
+  INCREASE_DAMAGE: 2
+  JUMP: 2
+  REGENERATION: 2
+  SATURATION: 2
+  SPEED: 2
+  HEALTH_BOOST: 2
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Kaioken_x4:
+ CommandName: "x4"
+ Desc: "Kaioken Transformation"
+ DescBoost: "+400"
+ Particle: "reddust"
+ PrefixQuote: "&6DAMMIT.... KAIOKEN.. TIMES... 4!!!!"
+ MiddleQuote: "&6-Kaioken Attack x4-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 25
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 30
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 2
+  FAST_DIGGING: 2
+  FIRE_RESISTANCE: 2
+  HEAL: 2
+  INCREASE_DAMAGE: 2
+  JUMP: 2
+  REGENERATION: 2
+  SATURATION: 2
+  SPEED: 2
+  HEALTH_BOOST: 2
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Kaioken_x20:
+ CommandName: "x20"
+ Desc: "Kaioken Transformation"
+ DescBoost: "+2000"
+ Particle: "reddust"
+ PrefixQuote: "&6KAIOKEN... TIMES... 20!!! AAAAHH"
+ MiddleQuote: "&6-Kaioken Attack x20-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 30
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 30
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 3
+  FAST_DIGGING: 3
+  FIRE_RESISTANCE: 3
+  HEAL: 3
+  INCREASE_DAMAGE: 3
+  JUMP: 3
+  REGENERATION: 3
+  SATURATION: 3
+  SPEED: 3
+  HEALTH_BOOST: 3
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Kaioken_x30:
+ CommandName: "x30"
+ Desc: "Kaioken Transformation"
+ DescBoost: "+3000"
+ Particle: "reddust"
+ PrefixQuote: "&6AAAAAAAAH.... KAIOKEN TIMES 30!!!!!!"
+ MiddleQuote: "&6-Kaioken Attack x30-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 35
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 35
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 3
+  FAST_DIGGING: 3
+  FIRE_RESISTANCE: 3
+  HEAL: 3
+  INCREASE_DAMAGE: 3
+  JUMP: 3
+  REGENERATION: 3
+  SATURATION: 3
+  SPEED: 3
+  HEALTH_BOOST: 3
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Kaioken_x40:
+ CommandName: "x40"
+ Desc: "Kaioken Transformation"
+ DescBoost: "+4000"
+ Particle: "reddust"
+ PrefixQuote: "&6KAIOKEN TIMES 40!!!"
+ MiddleQuote: "&6-Kaioken Attack x40-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 40
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 35
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 4
+  FAST_DIGGING: 4
+  FIRE_RESISTANCE: 4
+  HEAL: 4
+  INCREASE_DAMAGE: 4
+  JUMP: 4
+  REGENERATION: 4
+  SATURATION: 4
+  SPEED: 4
+  HEALTH_BOOST: 4
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Kaioken_x50:
+ CommandName: "x50"
+ Desc: "Kaioken Transformation"
+ DescBoost: "+5000"
+ Particle: "reddust"
+ PrefixQuote: "&6KAIOKEN TIMES 50!!!"
+ MiddleQuote: "&6-Kaioken Attack x50-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 45
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 35
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 5
+  FAST_DIGGING: 5
+  FIRE_RESISTANCE: 5
+  HEAL: 4
+  INCREASE_DAMAGE: 5
+  JUMP: 5
+  REGENERATION: 5
+  SATURATION: 5
+  SPEED: 5
+  HEALTH_BOOST: 5
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+  
+False_Super_Saiyan:
+ CommandName: "false"
+ Desc: "False Super Saiyan"
+ DescBoost: "x40"
+ Particle: "flame"
+ PrefixQuote: "&6AAAAH..... HHHHAAAAAAAAAA!"
+ MiddleQuote: "&6-Turns False Super Saiyan-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 5
+ DamageTaken: 5
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 1
+  FAST_DIGGING: 4
+  FIRE_RESISTANCE: 4
+  HEAL: 4
+  INCREASE_DAMAGE: 1
+  JUMP: 4
+  REGENERATION: 4
+  SATURATION: 4
+  SPEED: 4
+  HEALTH_BOOST: 1
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+  
+Super_Saiyan_1:
+ CommandName: "1"
+ Desc: "Super Saiyan 1"
+ DescBoost: "x50"
+ Particle: "flame"
+ PrefixQuote: "&6DARN YOU FRIEZA! NOW I'M MAAAAAD!"
+ MiddleQuote: "&6-Turns Super Saiyan 1-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 10
+ DamageTaken: 15
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 1
+  FAST_DIGGING: 5
+  FIRE_RESISTANCE: 5
+  HEAL: 5
+  INCREASE_DAMAGE: 1
+  JUMP: 5
+  REGENERATION: 5
+  SATURATION: 5
+  SPEED: 5
+  HEALTH_BOOST: 1
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+  
+Ultimate_Super_Saiyan:
+ CommandName: "ultimate"
+ Desc: "Super Saiyan 1 Ultimate"
+ DescBoost: "x55"
+ Particle: "flame"
+ PrefixQuote: "&6AAAAAAAAAAH!"
+ MiddleQuote: "&6-Turns Ultimate Super Saiyan-"
+ SuffixQuote: "&6That wasn't because you let the android live..."
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 15
+ DamageTaken: 15
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 6
+  FAST_DIGGING: 4
+  FIRE_RESISTANCE: 5
+  HEAL: 6
+  INCREASE_DAMAGE: 3
+  JUMP: 4
+  REGENERATION: 5
+  SATURATION: 5
+  SPEED: 3
+  HEALTH_BOOST: 2
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Super_Kaioken:
+ CommandName: "super"
+ Desc: "Kaioken & Super Saiyan Transformation"
+ DescBoost: "x60"
+ Particle: "flame"
+ PrefixQuote: "&6Guess I have no choice... SUPER KAIOKEEEEN!!"
+ MiddleQuote: "&6-Super Kaioken Attack-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 35
+ DamageTaken: 17
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 45
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 2
+  FAST_DIGGING: 6
+  FIRE_RESISTANCE: 6
+  HEAL: 2
+  INCREASE_DAMAGE: 6
+  JUMP: 3
+  REGENERATION: 3
+  SATURATION: 6
+  SPEED: 6
+  HEALTH_BOOST: 2
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Kaioken_x100:
+ CommandName: "x100"
+ Desc: "Kaioken Transformation"
+ DescBoost: "+10000"
+ Particle: "reddust"
+ PrefixQuote: "&6KAIOKEN TIMES 100!!!"
+ MiddleQuote: "&6-Kaioken Attack x100-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 60
+ DamageTaken: 20
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 40
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 5
+  FAST_DIGGING: 5
+  FIRE_RESISTANCE: 5
+  HEAL: 4
+  INCREASE_DAMAGE: 5
+  JUMP: 5
+  REGENERATION: 5
+  SATURATION: 5
+  SPEED: 5
+  HEALTH_BOOST: 5
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Super_Saiyan_2:
+ CommandName: "2"
+ Desc: "Super Saiyan 2"
+ DescBoost: "x100"
+ Particle: "flame"
+ PrefixQuote: "&6I WILL NEVER FORGIVE YOU!!"
+ MiddleQuote: "&6-Turns Super Saiyan 2-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 15
+ DamageTaken: 15
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 2
+  FAST_DIGGING: 10
+  FIRE_RESISTANCE: 10
+  HEAL: 10
+  INCREASE_DAMAGE: 2
+  JUMP: 10
+  REGENERATION: 10
+  SATURATION: 10
+  SPEED: 10
+  HEALTH_BOOST: 2
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Legendary_Super_Saiyan_1:
+ CommandName: "legendary"
+ Desc: "Legendary Super Saiyan"
+ DescBoost: "x70"
+ Particle: "happyvillager"
+ PrefixQuote: ""
+ MiddleQuote: "&6-Turns Legendary Super Saiyan-"
+ SuffixQuote: "&6KAKAROOOOOOT!!!"
+ Broadcast: true
+ # Cooldown: 0
+ DamageOdds: 30
+ DamageTaken: 15
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 11
+  FAST_DIGGING: 11
+  FIRE_RESISTANCE: 11
+  HEAL: 10
+  INCREASE_DAMAGE: 3
+  JUMP: 11
+  REGENERATION: 11
+  SATURATION: 11
+  SPEED: 11
+  HEALTH_BOOST: 3
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Potential_Unleashed:
+ CommandName: "potential"
+ Desc: "Potential Unleashed"
+ DescBoost: "x140"
+ Particle: "fireworksspark"
+ PrefixQuote: "&6Fight you? No, I want to kill you..."
+ MiddleQuote: "&6-Unleashes Potential-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 5
+ DamageTaken: 5
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 2
+  FAST_DIGGING: 6
+  FIRE_RESISTANCE: 6
+  HEAL: 6
+  INCREASE_DAMAGE: 2
+  JUMP: 6
+  REGENERATION: 6
+  SATURATION: 6
+  SPEED: 6
+  HEALTH_BOOST: 6
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Super_Saiyan_3:
+ CommandName: "3"
+ Desc: "Super Saiyan 3"
+ DescBoost: "x150"
+ Particle: "flame"
+ PrefixQuote: "&6AND THIS.... IS TO GO FURTHER BEYOND!!!"
+ MiddleQuote: "&6-Turns Super Saiyan 3-"
+ SuffixQuote: "&6This... This is Super Saiyan 3.."
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 30
+ DamageTaken: 16
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 2
+  FAST_DIGGING: 15
+  FIRE_RESISTANCE: 15
+  HEAL: 15
+  INCREASE_DAMAGE: 2
+  JUMP: 15
+  REGENERATION: 15
+  SATURATION: 15
+  SPEED: 15
+  HEALTH_BOOST: 2
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Super_Saiyan_4:
+ CommandName: "4"
+ Desc: "Super Saiyan 4"
+ DescBoost: "x200"
+ Particle: "lava"
+ PrefixQuote: "&6HMH!"
+ MiddleQuote: "&6-Turns Super Saiyan 4-"
+ SuffixQuote: "&6Your attacks... They tickle"
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 25
+ DamageTaken: 15
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 3
+  FAST_DIGGING: 20
+  FIRE_RESISTANCE: 20
+  HEAL: 20
+  INCREASE_DAMAGE: 3
+  JUMP: 20
+  REGENERATION: 20
+  SATURATION: 20
+  SPEED: 20
+  HEALTH_BOOST: 3
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Super_Saiyan_5:
+ CommandName: "5"
+ Desc: "Super Saiyan 5"
+ DescBoost: "250"
+ Particle: "explode"
+ PrefixQuote: "&6DAMMIT, LOOKS LIKE I'M JUST GONNA HAVE TO KILL YOU MYSELF!"
+ MiddleQuote: "&6-Turns Super Saiyan 5-"
+ SuffixQuote: ""
+ Broadcast: false
+ # Cooldown: 0
+ DamageOdds: 40
+ DamageTaken: 18
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 3
+  FAST_DIGGING: 25
+  FIRE_RESISTANCE: 25
+  HEAL: 25
+  INCREASE_DAMAGE: 3
+  JUMP: 25
+  REGENERATION: 25
+  SATURATION: 25
+  SPEED: 25
+  HEALTH_BOOST: 4
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Super_Saiyan_God:
+ CommandName: "god"
+ Desc: "Super Saiyan God"
+ DescBoost: "x300"
+ Particle: "reddust"
+ PrefixQuote: ""
+ MiddleQuote: "&4-Turns Super Saiyan God-"
+ SuffixQuote: "&4This power... It's... Overwhelming."
+ Broadcast: true
+ # Cooldown: 0
+ DamageOdds: 5
+ DamageTaken: 6
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 3
+  FAST_DIGGING: 30
+  FIRE_RESISTANCE: 30
+  HEAL: 30
+  INCREASE_DAMAGE: 4
+  JUMP: 30
+  REGENERATION: 30
+  SATURATION: 30
+  SPEED: 30
+  HEALTH_BOOST: 4
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Super_Saiyan_Blue_1:
+ CommandName: "blue"
+ Desc: "Super Saiyan Blue"
+ DescBoost: "x350"
+ Particle: "instantspell"
+ PrefixQuote: "&3AAAAAAAAAAAAAAHH!!!"
+ MiddleQuote: "&3-Turns Super Saiyan Blue 1-"
+ SuffixQuote: "&3I've been a Super Saiyan for years, now I too have the power of a god!"
+ Broadcast: true
+ # Cooldown: 0
+ DamageOdds: 25
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 7
+  FAST_DIGGING: 35
+  FIRE_RESISTANCE: 35
+  HEAL: 35
+  INCREASE_DAMAGE: 7
+  JUMP: 35
+  REGENERATION: 35
+  SATURATION: 35
+  SPEED: 35
+  HEALTH_BOOST: 7
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+  
+Super_Saiyan_Rose_1:
+ CommandName: "rose"
+ Desc: "Super Saiyan Rose"
+ DescBoost: "x360"
+ Particle: "dragonbreath"
+ PrefixQuote: "&5AAAAAAAAAAAAAAHH!!!"
+ MiddleQuote: "&5-Turns Super Saiyan Rose 1-"
+ SuffixQuote: "&5How is this color. Isn't it beautiful?"
+ Broadcast: true
+ # Cooldown: 0
+ DamageOdds: 25
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 8
+  FAST_DIGGING: 36
+  FIRE_RESISTANCE: 36
+  HEAL: 36
+  INCREASE_DAMAGE: 8
+  JUMP: 36
+  REGENERATION: 36
+  SATURATION: 36
+  SPEED: 36
+  HEALTH_BOOST: 8
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+
+Kaioken_Super_Saiyan_Blue_1_x10:
+ CommandName: "ssbx10"
+ Desc: "Kaioken & Super Saiyan Blue Transformation"
+ DescBoost: "x450"
+ Particle: "instantspell"
+ PrefixQuote: "&cAAAAAAHH... KAIOKEEN.... TIMES... 10!!!"
+ MiddleQuote: "&c-Super Kaioken Blue Attack x10-"
+ SuffixQuote: "&cThis... this is my trump card!"
+ Broadcast: true
+ # Cooldown: 0
+ DamageOdds: 90
+ DamageTaken: 19
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Kaioken_Cooldown: 50
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 35
+  FAST_DIGGING: 70
+  FIRE_RESISTANCE: 70
+  HEAL: 55
+  INCREASE_DAMAGE: 35
+  JUMP: 55
+  REGENERATION: 70
+  SATURATION: 70
+  SPEED: 55
+  HEALTH_BOOST: 14
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+  
+Super_Saiyan_Rage:
+ CommandName: "rage"
+ Desc: "Super Saiyan Rage"
+ DescBoost: "x355"
+ Particle: "instantspell"
+ PrefixQuote: "&6If you call it a sin, then FINE! AAAAAAAAAAAHHHHH!!!"
+ MiddleQuote: "&6-Turns Super Saiyan Rage-"
+ SuffixQuote: "&6Black! I...WILL KILL YOU!!!"
+ Broadcast: true
+ # Cooldown: 0
+ DamageOdds: 50
+ DamageTaken: 18
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 8
+  FAST_DIGGING: 30
+  FIRE_RESISTANCE: 30
+  HEAL: 30
+  INCREASE_DAMAGE: 8
+  JUMP: 30
+  REGENERATION: 30
+  SATURATION: 30
+  SPEED: 30
+  HEALTH_BOOST: 8
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+#ssw...
+#(Can now be added without any code changes :D)

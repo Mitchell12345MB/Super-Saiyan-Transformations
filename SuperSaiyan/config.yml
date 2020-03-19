@@ -2,7 +2,7 @@
 # Plugin page: http://bit.ly/1SMxY8S
 
 # DO NOT CHANGE THIS UNDER ANY CIRCUMSTANCE (Will reset your config)
-version: 12
+version: 14
 
 #####################################################
 #                                                   #
@@ -13,11 +13,11 @@ version: 12
 # The prefix when the plugin send you a message.
 Prefix: "&c[&bSuper Saiyan PL&c] "
 
+# The amount of particles you want spawned in. (Default is 10)
+Particle_Count: 10
+
 # Remove their transformation when they teleport via command or plugin.
 Teleportation_Removal: true
-
-# Control the cooldown between transformations (Do not put below 1)!
-Cooldown_Timer: 30
 
 # This true or false the lightning effect when transforming.
 Lightning_Effect: true
@@ -25,7 +25,7 @@ Lightning_Effect: true
 # This true or false the explosion effect when transforming
 Explosion_Effect: true
 
-# If the Explosion_Effect is set to "true", then you have the option to make blocks around you expload when transforming.
+# If the Explosion_Effect is set to "true", then you have the option to make blocks around you expload_normal when transforming.
 # (Leave "0" if you just want the effect).
 Explosion_Radious: 0
 
@@ -40,7 +40,7 @@ Sound_Effect: True
 
 # Chat Color Template: http://wiki.ess3.net/mc/
 
-# Player Particles Link: http://bit.ly/29HHadu
+# Particle list (DON'T USE ANYTHING ELSE BUT THESE): flame, villager_happy, spell_instant, dragon_breath, redstone
 
 #####################################
 #                                   #
@@ -52,13 +52,13 @@ Sound_Effect: True
 # [Desc] This is the name of the transformation in /ssj list, such as "Super Saiyan Rose".
 # [DescBoost] This is the multiplier/boost that the transformation will give you.
 #             SPECIAL NOTE for DescBoost: It is actually a placebo and does not affect anything whatsoever. As of V11 it does not match with the potion effect linearly. Therefore, it doesn't matter.
-# [Particle] This is the particle effect that will be applied when you tranform, if PlayerParticles is installed.
+# [Particle] Place the particles you want to use for your transformations here.
 # [PrefixQuote] This goes before the -Turns (Transformation)- or -Kaioken x(transformation)-. Leave blank if you don't want to use it.
 # [MiddleQuote] This announces what transformation you just did. I.E. "-Turns Super Saiyan 1-" or "-Kaioken attack x1-." Leave blank to disable this.
 # [SuffixQuote] This goes after the -Turns (Transformation)- or -Kaioken x(transformation)-. Leave blank if you don't want to use it.
 # [Broadcast] If you want to broadcast the quote along with the player name that transformed, replace "false" with "true."
-# [# Cooldown] This is if you want to add a custome cooldown when exicuting a certain transformation (leave "0" to diable)
-# [Kaioken_# Cooldown] This is the time it takes for the kaioken transformation to wear off. (do not go negative) (Only for kaioken commands)
+# [Cooldown] This is if you want to add a custome cooldown when exicuting a certain transformation (leave "0" to diable)
+# [Kaioken_Cooldown] This is the time it takes for the kaioken transformation to wear off. (do not go negative) (Only for kaioken commands)
 # [DamageOdds] Random damage taken when transforming. (0 - 5), (Leave "0" to false).
 # [DamageTaken] How much damage it would take from you if the odds weren't in your favor. (and if DamageOdds is enabled) (0 - 10), (Leave "0" to false if you just want traits to be effected).
 # [DamageTakenQuote] Quote when you transform wrong.
@@ -90,6 +90,7 @@ Transformation_List:
   - Legendary_Super_Saiyan_1
   - Super_Saiyan_God
   - Super_Saiyan_Blue_1
+  - Super_Saiyan_Blue_2
   - Super_Saiyan_Rose_1
   - Potential_Unleashed
   - Super_Saiyan_Rage
@@ -116,13 +117,13 @@ Base_Form:
 Kaioken_x1:
  CommandName: "x1"
  Desc: "Kaioken Transformation"
+ Particle: "redstone"
  DescBoost: "+100"
- Particle: "reddust"
  PrefixQuote: "&6Kaioken!"
  MiddleQuote: "&6-Kaioken Attack x1-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 10
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -154,13 +155,13 @@ Kaioken_x1:
 Kaioken_x2:
  CommandName: "x2"
  Desc: "Kaioken Transformation"
+ Particle: "redstone"
  DescBoost: "+200"
- Particle: "reddust"
  PrefixQuote: "&6Kaioken.. Times... 2!!!!"
  MiddleQuote: "&6-Kaioken Attack x2-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 15
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -192,13 +193,13 @@ Kaioken_x2:
 Kaioken_x3:
  CommandName: "x3"
  Desc: "Kaioken Transformation"
+ Particle: "redstone"
  DescBoost: "+300"
- Particle: "reddust"
  PrefixQuote: "&6Kaioken... Times... 3!!!!!"
  MiddleQuote: "&6-Kaioken Attack x3-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 20
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -231,12 +232,12 @@ Kaioken_x4:
  CommandName: "x4"
  Desc: "Kaioken Transformation"
  DescBoost: "+400"
- Particle: "reddust"
+ Particle: "redstone"
  PrefixQuote: "&6DAMMIT.... KAIOKEN.. TIMES... 4!!!!"
  MiddleQuote: "&6-Kaioken Attack x4-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 25
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -269,12 +270,12 @@ Kaioken_x20:
  CommandName: "x20"
  Desc: "Kaioken Transformation"
  DescBoost: "+2000"
- Particle: "reddust"
+ Particle: "redstone"
  PrefixQuote: "&6KAIOKEN... TIMES... 20!!! AAAAHH"
  MiddleQuote: "&6-Kaioken Attack x20-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 30
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -307,12 +308,12 @@ Kaioken_x30:
  CommandName: "x30"
  Desc: "Kaioken Transformation"
  DescBoost: "+3000"
- Particle: "reddust"
+ Particle: "redstone"
  PrefixQuote: "&6AAAAAAAAH.... KAIOKEN TIMES 30!!!!!!"
  MiddleQuote: "&6-Kaioken Attack x30-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 35
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -345,12 +346,12 @@ Kaioken_x40:
  CommandName: "x40"
  Desc: "Kaioken Transformation"
  DescBoost: "+4000"
- Particle: "reddust"
+ Particle: "redstone"
  PrefixQuote: "&6KAIOKEN TIMES 40!!!"
  MiddleQuote: "&6-Kaioken Attack x40-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 40
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -383,12 +384,12 @@ Kaioken_x50:
  CommandName: "x50"
  Desc: "Kaioken Transformation"
  DescBoost: "+5000"
- Particle: "reddust"
+ Particle: "redstone"
  PrefixQuote: "&6KAIOKEN TIMES 50!!!"
  MiddleQuote: "&6-Kaioken Attack x50-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 45
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -426,7 +427,7 @@ False_Super_Saiyan:
  MiddleQuote: "&6-Turns False Super Saiyan-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 5
  DamageTaken: 5
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -463,7 +464,7 @@ Super_Saiyan_1:
  MiddleQuote: "&6-Turns Super Saiyan 1-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 10
  DamageTaken: 15
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -500,7 +501,7 @@ Ultimate_Super_Saiyan:
  MiddleQuote: "&6-Turns Ultimate Super Saiyan-"
  SuffixQuote: "&6That wasn't because you let the android live..."
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 15
  DamageTaken: 15
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -537,7 +538,7 @@ Super_Kaioken:
  MiddleQuote: "&6-Super Kaioken Attack-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 35
  DamageTaken: 17
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -570,12 +571,12 @@ Kaioken_x100:
  CommandName: "x100"
  Desc: "Kaioken Transformation"
  DescBoost: "+10000"
- Particle: "reddust"
+ Particle: "redstone"
  PrefixQuote: "&6KAIOKEN TIMES 100!!!"
  MiddleQuote: "&6-Kaioken Attack x100-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 60
  DamageTaken: 20
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -613,7 +614,7 @@ Super_Saiyan_2:
  MiddleQuote: "&6-Turns Super Saiyan 2-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 15
  DamageTaken: 15
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -645,12 +646,12 @@ Legendary_Super_Saiyan_1:
  CommandName: "legendary"
  Desc: "Legendary Super Saiyan"
  DescBoost: "x70"
- Particle: "happyvillager"
+ Particle: "villager_happy"
  PrefixQuote: ""
  MiddleQuote: "&6-Turns Legendary Super Saiyan-"
  SuffixQuote: "&6KAKAROOOOOOT!!!"
  Broadcast: true
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 30
  DamageTaken: 15
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -682,12 +683,12 @@ Potential_Unleashed:
  CommandName: "potential"
  Desc: "Potential Unleashed"
  DescBoost: "x140"
- Particle: "fireworksspark"
+ Particle: "fireworks_spark"
  PrefixQuote: "&6Fight you? No, I want to kill you..."
  MiddleQuote: "&6-Unleashes Potential-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 5
  DamageTaken: 5
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -724,7 +725,7 @@ Super_Saiyan_3:
  MiddleQuote: "&6-Turns Super Saiyan 3-"
  SuffixQuote: "&6This... This is Super Saiyan 3.."
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 30
  DamageTaken: 16
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -761,7 +762,7 @@ Super_Saiyan_4:
  MiddleQuote: "&6-Turns Super Saiyan 4-"
  SuffixQuote: "&6Your attacks... They tickle"
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 25
  DamageTaken: 15
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -793,12 +794,12 @@ Super_Saiyan_5:
  CommandName: "5"
  Desc: "Super Saiyan 5"
  DescBoost: "250"
- Particle: "explode"
+ Particle: "spell_instant"
  PrefixQuote: "&6DAMMIT, LOOKS LIKE I'M JUST GONNA HAVE TO KILL YOU MYSELF!"
  MiddleQuote: "&6-Turns Super Saiyan 5-"
  SuffixQuote: ""
  Broadcast: false
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 40
  DamageTaken: 18
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -830,12 +831,12 @@ Super_Saiyan_God:
  CommandName: "god"
  Desc: "Super Saiyan God"
  DescBoost: "x300"
- Particle: "reddust"
+ Particle: "redstone"
  PrefixQuote: ""
  MiddleQuote: "&4-Turns Super Saiyan God-"
  SuffixQuote: "&4This power... It's... Overwhelming."
  Broadcast: true
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 5
  DamageTaken: 6
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -867,12 +868,12 @@ Super_Saiyan_Blue_1:
  CommandName: "blue"
  Desc: "Super Saiyan Blue"
  DescBoost: "x350"
- Particle: "instantspell"
+ Particle: "spell_instant"
  PrefixQuote: "&3AAAAAAAAAAAAAAHH!!!"
  MiddleQuote: "&3-Turns Super Saiyan Blue 1-"
  SuffixQuote: "&3I've been a Super Saiyan for years, now I too have the power of a god!"
  Broadcast: true
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 25
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -904,12 +905,12 @@ Super_Saiyan_Rose_1:
  CommandName: "rose"
  Desc: "Super Saiyan Rose"
  DescBoost: "x360"
- Particle: "dragonbreath"
+ Particle: "dragon_breath"
  PrefixQuote: "&5AAAAAAAAAAAAAAHH!!!"
  MiddleQuote: "&5-Turns Super Saiyan Rose 1-"
  SuffixQuote: "&5How is this color. Isn't it beautiful?"
  Broadcast: true
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 25
  DamageTaken: 10
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -938,15 +939,15 @@ Super_Saiyan_Rose_1:
   HEALTH_BOOST: true
 
 Kaioken_Super_Saiyan_Blue_1_x10:
- CommandName: "ssbx10"
+ CommandName: "bluex10"
  Desc: "Kaioken & Super Saiyan Blue Transformation"
  DescBoost: "x450"
- Particle: "instantspell"
- PrefixQuote: "&cAAAAAAHH... KAIOKEEN.... TIMES... 10!!!"
- MiddleQuote: "&c-Super Kaioken Blue Attack x10-"
- SuffixQuote: "&cThis... this is my trump card!"
+ Particle: "spell_instant"
+ PrefixQuote: "&6AAAAAAHH... KAIOKEEN.... TIMES... 10!!!"
+ MiddleQuote: "&6-Super Kaioken Blue Attack x10-"
+ SuffixQuote: "&6This... this is my trump card!"
  Broadcast: true
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 90
  DamageTaken: 19
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -979,12 +980,12 @@ Super_Saiyan_Rage:
  CommandName: "rage"
  Desc: "Super Saiyan Rage"
  DescBoost: "x355"
- Particle: "instantspell"
+ Particle: "spell_instant"
  PrefixQuote: "&6If you call it a sin, then FINE! AAAAAAAAAAAHHHHH!!!"
  MiddleQuote: "&6-Turns Super Saiyan Rage-"
  SuffixQuote: "&6Black! I...WILL KILL YOU!!!"
  Broadcast: true
- # Cooldown: 0
+ Cooldown: 30
  DamageOdds: 50
  DamageTaken: 18
  DamageTakenQuote: "&cI really botched this one huh?"
@@ -999,6 +1000,43 @@ Super_Saiyan_Rage:
   REGENERATION: 30
   SATURATION: 30
   SPEED: 30
+  HEALTH_BOOST: 8
+ Use_Traits?:
+  DAMAGE_RESISTANCE: true
+  FAST_DIGGING: true
+  FIRE_RESISTANCE: true
+  HEAL: true
+  INCREASE_DAMAGE: true
+  JUMP: true
+  REGENERATION: true
+  SATURATION: true
+  SPEED: true
+  HEALTH_BOOST: true
+  
+Super_Saiyan_Blue_2:
+ CommandName: "blue2"
+ Desc: "Super Saiyan Blue Evolution"
+ DescBoost: "x370"
+ Particle: "spell_instant"
+ PrefixQuote: "&3AAAAAAAAAAAAAAHH!!!"
+ MiddleQuote: "&3-Turns Super Saiyan Blue Evolution-"
+ SuffixQuote: ""
+ Broadcast: true
+ Cooldown: 30
+ DamageOdds: 25
+ DamageTaken: 10
+ DamageTakenQuote: "&cI really botched this one huh?"
+ Traits:
+ # Please do not add negative numbers to traits!
+  DAMAGE_RESISTANCE: 8
+  FAST_DIGGING: 40
+  FIRE_RESISTANCE: 40
+  HEAL: 35
+  INCREASE_DAMAGE: 8
+  JUMP: 35
+  REGENERATION: 40
+  SATURATION: 40
+  SPEED: 40
   HEALTH_BOOST: 8
  Use_Traits?:
   DAMAGE_RESISTANCE: true

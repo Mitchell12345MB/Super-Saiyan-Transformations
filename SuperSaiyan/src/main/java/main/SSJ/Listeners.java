@@ -32,7 +32,6 @@ public class Listeners
     player.removePotionEffect(PotionEffectType.SATURATION);
     player.removePotionEffect(PotionEffectType.SPEED);
     player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
-    player.performCommand("pp reset");
   }
   
   @EventHandler
@@ -49,7 +48,6 @@ public class Listeners
     player.removePotionEffect(PotionEffectType.SATURATION);
     player.removePotionEffect(PotionEffectType.SPEED);
     player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
-    player.performCommand("pp reset");
   }
   
   @EventHandler
@@ -70,7 +68,6 @@ public class Listeners
         player.removePotionEffect(PotionEffectType.SATURATION);
         player.removePotionEffect(PotionEffectType.SPEED);
         player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
-        player.performCommand("pp reset");
       }
     }
   }

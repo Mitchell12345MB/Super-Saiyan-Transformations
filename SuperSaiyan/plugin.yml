@@ -1,6 +1,6 @@
 name: SuperSaiyan
 author: Mitchelll, Noorquacker
-version: 12
+version: 14
 description: Turns you into a Super Saiyan!
 main: main.SSJ.Main
 commands:

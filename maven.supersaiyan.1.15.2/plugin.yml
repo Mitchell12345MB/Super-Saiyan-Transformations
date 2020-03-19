@@ -1,0 +1,10 @@
+name: SuperSaiyan
+author: Mitchelll, Noorquacker
+version: 14
+description: Turns you into a Super Saiyan!
+main: maven.supersaiyan.Main
+commands:
+  ssj:
+    description: Turns you into a Super Saiyan!
+  kaioken:
+    description: Kaioken Attack.

@@ -2,7 +2,7 @@
 # Plugin page: http://bit.ly/1SMxY8S
 
 # DO NOT CHANGE THIS UNDER ANY CIRCUMSTANCE (Will reset your config)
-version: 14
+version: 15
 
 #####################################################
 #                                                   #
@@ -12,9 +12,6 @@ version: 14
 
 # The prefix when the plugin send you a message.
 Prefix: "&c[&bSuper Saiyan PL&c] "
-
-# The amount of particles you want spawned in. (Default is 10)
-Particle_Count: 10
 
 # Remove their transformation when they teleport via command or plugin.
 Teleportation_Removal: true
@@ -40,7 +37,7 @@ Sound_Effect: True
 
 # Chat Color Template: http://wiki.ess3.net/mc/
 
-# Particle list (DON'T USE ANYTHING ELSE BUT THESE): flame, villager_happy, spell_instant, dragon_breath, redstone
+# Particle list (DON'T USE ANYTHING ELSE BUT THESE): flame, villager_happy, spell_instant, dragon_breath, redstone, fireworks_spark
 
 #####################################
 #                                   #
@@ -51,13 +48,15 @@ Sound_Effect: True
 # [CommandName] This is what you will type after "/ssj " or "/kaioken ", transforming you into whatever you specified.
 # [Desc] This is the name of the transformation in /ssj list, such as "Super Saiyan Rose".
 # [DescBoost] This is the multiplier/boost that the transformation will give you.
-#             SPECIAL NOTE for DescBoost: It is actually a placebo and does not affect anything whatsoever. As of V11 it does not match with the potion effect linearly. Therefore, it doesn't matter.
-# [Particle] Place the particles you want to use for your transformations here.
+#             SPECIAL NOTE for DescBoost: It is actually a place holder and does not affect anything whatsoever. As of V11 it does not match with the potion effect linearly. Therefore, it doesn't matter.
+# [Particle] & [Particle2] Place the particles you want to use for your transformations here.
+# [Type] What type of particle effects do you want to use.
+# [Count] How many particles you want to spawn in. DO NOT SET AS 0 IF YOURE USING PARTICLES!
 # [PrefixQuote] This goes before the -Turns (Transformation)- or -Kaioken x(transformation)-. Leave blank if you don't want to use it.
 # [MiddleQuote] This announces what transformation you just did. I.E. "-Turns Super Saiyan 1-" or "-Kaioken attack x1-." Leave blank to disable this.
 # [SuffixQuote] This goes after the -Turns (Transformation)- or -Kaioken x(transformation)-. Leave blank if you don't want to use it.
 # [Broadcast] If you want to broadcast the quote along with the player name that transformed, replace "false" with "true."
-# [Cooldown] This is if you want to add a custome cooldown when exicuting a certain transformation (leave "0" to diable)
+# [Cooldown] This is if you want to add a custom cooldown when executing a certain transformation (leave "0" to disable)
 # [Kaioken_Cooldown] This is the time it takes for the kaioken transformation to wear off. (do not go negative) (Only for kaioken commands)
 # [DamageOdds] Random damage taken when transforming. (0 - 5), (Leave "0" to false).
 # [DamageTaken] How much damage it would take from you if the odds weren't in your favor. (and if DamageOdds is enabled) (0 - 10), (Leave "0" to false if you just want traits to be effected).
@@ -117,7 +116,12 @@ Base_Form:
 Kaioken_x1:
  CommandName: "x1"
  Desc: "Kaioken Transformation"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  DescBoost: "+100"
  PrefixQuote: "&6Kaioken!"
  MiddleQuote: "&6-Kaioken Attack x1-"
@@ -155,7 +159,12 @@ Kaioken_x1:
 Kaioken_x2:
  CommandName: "x2"
  Desc: "Kaioken Transformation"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  DescBoost: "+200"
  PrefixQuote: "&6Kaioken.. Times... 2!!!!"
  MiddleQuote: "&6-Kaioken Attack x2-"
@@ -193,7 +202,12 @@ Kaioken_x2:
 Kaioken_x3:
  CommandName: "x3"
  Desc: "Kaioken Transformation"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  DescBoost: "+300"
  PrefixQuote: "&6Kaioken... Times... 3!!!!!"
  MiddleQuote: "&6-Kaioken Attack x3-"
@@ -232,7 +246,12 @@ Kaioken_x4:
  CommandName: "x4"
  Desc: "Kaioken Transformation"
  DescBoost: "+400"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6DAMMIT.... KAIOKEN.. TIMES... 4!!!!"
  MiddleQuote: "&6-Kaioken Attack x4-"
  SuffixQuote: ""
@@ -270,7 +289,12 @@ Kaioken_x20:
  CommandName: "x20"
  Desc: "Kaioken Transformation"
  DescBoost: "+2000"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6KAIOKEN... TIMES... 20!!! AAAAHH"
  MiddleQuote: "&6-Kaioken Attack x20-"
  SuffixQuote: ""
@@ -308,7 +332,12 @@ Kaioken_x30:
  CommandName: "x30"
  Desc: "Kaioken Transformation"
  DescBoost: "+3000"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6AAAAAAAAH.... KAIOKEN TIMES 30!!!!!!"
  MiddleQuote: "&6-Kaioken Attack x30-"
  SuffixQuote: ""
@@ -346,7 +375,12 @@ Kaioken_x40:
  CommandName: "x40"
  Desc: "Kaioken Transformation"
  DescBoost: "+4000"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6KAIOKEN TIMES 40!!!"
  MiddleQuote: "&6-Kaioken Attack x40-"
  SuffixQuote: ""
@@ -384,7 +418,12 @@ Kaioken_x50:
  CommandName: "x50"
  Desc: "Kaioken Transformation"
  DescBoost: "+5000"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6KAIOKEN TIMES 50!!!"
  MiddleQuote: "&6-Kaioken Attack x50-"
  SuffixQuote: ""
@@ -422,7 +461,12 @@ False_Super_Saiyan:
  CommandName: "false"
  Desc: "False Super Saiyan"
  DescBoost: "x40"
- Particle: "flame"
+ Particle:
+  Type: "flame"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6AAAAH..... HHHHAAAAAAAAAA!"
  MiddleQuote: "&6-Turns False Super Saiyan-"
  SuffixQuote: ""
@@ -459,7 +503,12 @@ Super_Saiyan_1:
  CommandName: "1"
  Desc: "Super Saiyan 1"
  DescBoost: "x50"
- Particle: "flame"
+ Particle:
+  Type: "flame"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6DARN YOU FRIEZA! NOW I'M MAAAAAD!"
  MiddleQuote: "&6-Turns Super Saiyan 1-"
  SuffixQuote: ""
@@ -496,7 +545,12 @@ Ultimate_Super_Saiyan:
  CommandName: "ultimate"
  Desc: "Super Saiyan 1 Ultimate"
  DescBoost: "x55"
- Particle: "flame"
+ Particle:
+  Type: "flame"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6AAAAAAAAAAH!"
  MiddleQuote: "&6-Turns Ultimate Super Saiyan-"
  SuffixQuote: "&6That wasn't because you let the android live..."
@@ -533,7 +587,12 @@ Super_Kaioken:
  CommandName: "super"
  Desc: "Kaioken & Super Saiyan Transformation"
  DescBoost: "x60"
- Particle: "flame"
+ Particle:
+  Type: "flame"
+  Count: 5
+ Particle2:
+  Type: "redstone"
+  Count: 5
  PrefixQuote: "&6Guess I have no choice... SUPER KAIOKEEEEN!!"
  MiddleQuote: "&6-Super Kaioken Attack-"
  SuffixQuote: ""
@@ -571,7 +630,12 @@ Kaioken_x100:
  CommandName: "x100"
  Desc: "Kaioken Transformation"
  DescBoost: "+10000"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6KAIOKEN TIMES 100!!!"
  MiddleQuote: "&6-Kaioken Attack x100-"
  SuffixQuote: ""
@@ -609,7 +673,12 @@ Super_Saiyan_2:
  CommandName: "2"
  Desc: "Super Saiyan 2"
  DescBoost: "x100"
- Particle: "flame"
+ Particle:
+  Type: "flame"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6I WILL NEVER FORGIVE YOU!!"
  MiddleQuote: "&6-Turns Super Saiyan 2-"
  SuffixQuote: ""
@@ -646,7 +715,12 @@ Legendary_Super_Saiyan_1:
  CommandName: "legendary"
  Desc: "Legendary Super Saiyan"
  DescBoost: "x70"
- Particle: "villager_happy"
+ Particle:
+  Type: "villager_happy"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: ""
  MiddleQuote: "&6-Turns Legendary Super Saiyan-"
  SuffixQuote: "&6KAKAROOOOOOT!!!"
@@ -683,7 +757,12 @@ Potential_Unleashed:
  CommandName: "potential"
  Desc: "Potential Unleashed"
  DescBoost: "x140"
- Particle: "fireworks_spark"
+ Particle:
+  Type: "fireworks_spark"
+  Count: 10
+ Particle2:
+  Type: "flame"
+  Count: 0
  PrefixQuote: "&6Fight you? No, I want to kill you..."
  MiddleQuote: "&6-Unleashes Potential-"
  SuffixQuote: ""
@@ -720,7 +799,12 @@ Super_Saiyan_3:
  CommandName: "3"
  Desc: "Super Saiyan 3"
  DescBoost: "x150"
- Particle: "flame"
+ Particle:
+  Type: "flame"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6AND THIS.... IS TO GO FURTHER BEYOND!!!"
  MiddleQuote: "&6-Turns Super Saiyan 3-"
  SuffixQuote: "&6This... This is Super Saiyan 3.."
@@ -757,7 +841,12 @@ Super_Saiyan_4:
  CommandName: "4"
  Desc: "Super Saiyan 4"
  DescBoost: "x200"
- Particle: "lava"
+ Particle:
+  Type: "lava"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6HMH!"
  MiddleQuote: "&6-Turns Super Saiyan 4-"
  SuffixQuote: "&6Your attacks... They tickle"
@@ -794,7 +883,12 @@ Super_Saiyan_5:
  CommandName: "5"
  Desc: "Super Saiyan 5"
  DescBoost: "250"
- Particle: "spell_instant"
+ Particle:
+  Type: "spell_instant"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&6DAMMIT, LOOKS LIKE I'M JUST GONNA HAVE TO KILL YOU MYSELF!"
  MiddleQuote: "&6-Turns Super Saiyan 5-"
  SuffixQuote: ""
@@ -831,7 +925,12 @@ Super_Saiyan_God:
  CommandName: "god"
  Desc: "Super Saiyan God"
  DescBoost: "x300"
- Particle: "redstone"
+ Particle:
+  Type: "redstone"
+  Count: 5
+ Particle2:
+  Type: "flame"
+  Count: 5
  PrefixQuote: ""
  MiddleQuote: "&4-Turns Super Saiyan God-"
  SuffixQuote: "&4This power... It's... Overwhelming."
@@ -868,7 +967,12 @@ Super_Saiyan_Blue_1:
  CommandName: "blue"
  Desc: "Super Saiyan Blue"
  DescBoost: "x350"
- Particle: "spell_instant"
+ Particle:
+  Type: "spell_instant"
+  Count: 10
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&3AAAAAAAAAAAAAAHH!!!"
  MiddleQuote: "&3-Turns Super Saiyan Blue 1-"
  SuffixQuote: "&3I've been a Super Saiyan for years, now I too have the power of a god!"
@@ -905,7 +1009,12 @@ Super_Saiyan_Rose_1:
  CommandName: "rose"
  Desc: "Super Saiyan Rose"
  DescBoost: "x360"
- Particle: "dragon_breath"
+ Particle:
+  Type: "dragon_breath"
+  Count: 5
+ Particle2:
+  Type: "redstone"
+  Count: 5
  PrefixQuote: "&5AAAAAAAAAAAAAAHH!!!"
  MiddleQuote: "&5-Turns Super Saiyan Rose 1-"
  SuffixQuote: "&5How is this color. Isn't it beautiful?"
@@ -942,7 +1051,12 @@ Kaioken_Super_Saiyan_Blue_1_x10:
  CommandName: "bluex10"
  Desc: "Kaioken & Super Saiyan Blue Transformation"
  DescBoost: "x450"
- Particle: "spell_instant"
+ Particle:
+  Type: "spell_instant"
+  Count: 5
+ Particle2:
+  Type: "redstone"
+  Count: 5
  PrefixQuote: "&6AAAAAAHH... KAIOKEEN.... TIMES... 10!!!"
  MiddleQuote: "&6-Super Kaioken Blue Attack x10-"
  SuffixQuote: "&6This... this is my trump card!"
@@ -980,7 +1094,12 @@ Super_Saiyan_Rage:
  CommandName: "rage"
  Desc: "Super Saiyan Rage"
  DescBoost: "x355"
- Particle: "spell_instant"
+ Particle:
+  Type: "spell_instant"
+  Count: 5
+ Particle2:
+  Type: "flame"
+  Count: 5
  PrefixQuote: "&6If you call it a sin, then FINE! AAAAAAAAAAAHHHHH!!!"
  MiddleQuote: "&6-Turns Super Saiyan Rage-"
  SuffixQuote: "&6Black! I...WILL KILL YOU!!!"
@@ -1017,7 +1136,12 @@ Super_Saiyan_Blue_2:
  CommandName: "blue2"
  Desc: "Super Saiyan Blue Evolution"
  DescBoost: "x370"
- Particle: "spell_instant"
+ Particle:
+  Type: "spell_instant"
+  Count: 5
+ Particle2:
+  Type: ""
+  Count: 0
  PrefixQuote: "&3AAAAAAAAAAAAAAHH!!!"
  MiddleQuote: "&3-Turns Super Saiyan Blue Evolution-"
  SuffixQuote: ""

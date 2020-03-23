@@ -4,97 +4,83 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
+
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.Color;
-import org.bukkit.Location;
-import org.bukkit.Particle;
 import org.bukkit.Sound;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.event.player.PlayerTeleportEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
 
 public class Main extends JavaPlugin implements Listener {
-	private HashMap<Player, Integer> cooldownTime;
 
-	private HashMap<Player, Integer> cooldownTimeK;
-
-	private HashMap<Player, BukkitRunnable> cooldownTask;
+	String Prefix = getConfig().getString("Prefix").replace("&", "§");
 
 	Random rand = new Random();
 
 	public void onEnable() {
+
+		PluginManager pm = Bukkit.getServer().getPluginManager();
+
 		getConfig().options().copyDefaults(true);
 		saveDefaultConfig();
+
 		if (getConfig().getDouble("version") < Double.parseDouble(getDescription().getVersion())) {
 			File configFile = new File(getDataFolder(), "config.yml");
 			configFile.delete();
 			saveDefaultConfig();
 			reloadConfig();
-			getLogger().warning("Config.yml has been updated!");
+			getLogger().warning(Prefix + "Config.yml has been updated!");
 		}
-		PluginManager pm = Bukkit.getServer().getPluginManager();
-		pm.registerEvents(this, (Plugin) this);
-		pm.registerEvents(new Listeners(this), (Plugin) this);
-		getLogger().info("Super Saiyan Plugin has been ENABLED " + getDescription().getVersion());
-		this.cooldownTime = new HashMap<>();
-		this.cooldownTimeK = new HashMap<>();
-		this.cooldownTask = new HashMap<>();
+
+		pm.registerEvents(this, this);
+		pm.registerEvents(new Listeners(this), this);
+		pm.registerEvents(new ParticleEffects(this), this);
+		pm.registerEvents(new Cooldowns(this), this);
+		pm.registerEvents(new ParticleSystem(this), this);
+
+		getLogger().info(Prefix + "has been ENABLED " + getDescription().getVersion());
+
+		if (Bukkit.getServer().getPluginManager().isPluginEnabled("PlayerParticles_v7.5")) {
+			getLogger().info(Prefix + "We've noticed you are using player particles. Just a reminder; "
+					+ "you no longer need player particles ro run this plugin to it's fullest.");
+		}
+
+		Cooldowns.cooldownTime = new HashMap<>();
+		ParticleSystem.cooldownTimeK = new HashMap<>();
+		Cooldowns.cooldownTask = new HashMap<>();
 	}
 
 	public void onDisable() {
-		getLogger().info("Super Saiyan Plugin has been DISABLED");
+		getLogger().info(Prefix + "has been DISABLED");
 		saveDefaultConfig();
 	}
 
 	List<String> ssjList = getConfig().getStringList("Transformation_List.SuperSaiyans");
-
 	List<String> kaiokenList = getConfig().getStringList("Transformation_List.Kaiokens");
 
 	ArrayList<Player> cooldown = new ArrayList<>();
 
-	String Prefix = getConfig().getString("Prefix").replace("&", "§");
-
-	private Map<CommandSender, BukkitTask> tasks = new HashMap<>();
-
 	public boolean onCommand(CommandSender sender, Command cmd, String Label, String[] args) {
+
 		if (sender instanceof Player) {
+
 			final Player player = (Player) sender;
-			final int pcount = getConfig().getInt("Particle_Count");
-			final Particle.DustOptions redstone = new Particle.DustOptions(Color.RED, 1.0F);
+
 			boolean cmdFound = false;
+
 			if (args.length >= 1)
 				if (cmd.getName().equalsIgnoreCase("ssj")) {
 					if (args[0].equalsIgnoreCase("base")) {
-						BukkitTask t = this.tasks.get(sender);
 						cmdFound = true;
-						if (t != null)
-							t.cancel();
-						player.removePotionEffect(PotionEffectType.FAST_DIGGING);
-						player.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
-						player.removePotionEffect(PotionEffectType.HEAL);
-						player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
-						player.removePotionEffect(PotionEffectType.JUMP);
-						player.removePotionEffect(PotionEffectType.REGENERATION);
-						player.removePotionEffect(PotionEffectType.SATURATION);
-						player.removePotionEffect(PotionEffectType.SPEED);
-						player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
-						player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
+						ParticleSystem.cancel(player);
+						Listeners.removeP(player);
 						player.sendMessage(getConfig().getString("Base_Form.PrefixQuote").replace("&", "§"));
 						player.sendMessage(getConfig().getString("Base_Form.MiddleQuote").replace("&", "§"));
 						player.sendMessage(getConfig().getString("Base_Form.SuffixQuote").replace("&", "§"));
@@ -102,24 +88,23 @@ public class Main extends JavaPlugin implements Listener {
 					int i;
 					for (i = 0; i < this.ssjList.size(); i++) {
 						final String ssj = this.ssjList.get(i);
+
+						int stime = Integer
+								.valueOf(getConfig().getInt(String.valueOf(ssj) + ".Cooldown"));
+						
+						String particle1 = Main.this.getConfig().getString(String.valueOf(ssj) + ".Particle.Type");
+						String particle2 = Main.this.getConfig().getString(String.valueOf(ssj) + ".Particle2.Type");
+
 						if (args[0].equalsIgnoreCase(getConfig().getString(String.valueOf(ssj) + ".CommandName"))) {
 							cmdFound = true;
 							if (player.hasPermission(
 									"ssj." + getConfig().getString(String.valueOf(ssj) + ".CommandName"))) {
-								if (this.cooldownTime.containsKey(player)) {
+								if (Cooldowns.cooldownTime.containsKey(player)) {
 									player.sendMessage(String.valueOf(this.Prefix) + ChatColor.RED
-											+ "You must wait for " + this.cooldownTime.get(player) + " seconds.");
+											+ "You must wait for " + Cooldowns.cooldownTime.get(player) + " seconds.");
 									return true;
 								}
-								player.removePotionEffect(PotionEffectType.FAST_DIGGING);
-								player.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
-								player.removePotionEffect(PotionEffectType.HEAL);
-								player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
-								player.removePotionEffect(PotionEffectType.JUMP);
-								player.removePotionEffect(PotionEffectType.REGENERATION);
-								player.removePotionEffect(PotionEffectType.SATURATION);
-								player.removePotionEffect(PotionEffectType.SPEED);
-								player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
+								Listeners.removeP(player);
 								if (getConfig()
 										.getBoolean(getConfig().getString(String.valueOf(ssj) + ".CommandName"))) {
 									Bukkit.broadcastMessage(String.valueOf(player.getDisplayName()) + ": " + getConfig()
@@ -187,55 +172,11 @@ public class Main extends JavaPlugin implements Listener {
 								if (getConfig().getBoolean("Sound_Effect"))
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
-								BukkitTask t = this.tasks.put(sender, (new BukkitRunnable() {
-									public void run() {
-										Location location = player.getLocation();
-										World world = player.getWorld();
-										String checkSsj = Main.this.getConfig()
-												.getString(String.valueOf(ssj) + ".Particle");
-										if (checkSsj.contains("redstone")) {
-											world.spawnParticle(Particle.REDSTONE, location, pcount, 0.3D, 0.9D, 0.3D,
-													0.05D, redstone);
-										} else {
-											world.spawnParticle(Particle.valueOf(Main.this.getConfig()
-													.getString(String.valueOf(ssj) + ".Particle").toUpperCase()),
-													location.getX(), location.getY(), location.getZ(), pcount, 0.3D,
-													0.9D, 0.3D, 0.05D);
-										}
-									}
-								}).runTaskTimerAsynchronously((Plugin) this, 0L, 0L));
-								if (t != null)
-									t.cancel();
-								this.cooldownTime.put(player,
-										Integer.valueOf(getConfig().getInt(String.valueOf(ssj) + ".Cooldown")));
-								this.cooldownTask.put(player, new BukkitRunnable() {
-									public void run() {
-										Main.this.cooldownTime.put(player, Integer.valueOf(
-												((Integer) Main.this.cooldownTime.get(player)).intValue() - 1));
-										if (((Integer) Main.this.cooldownTime.get(player)).intValue() == 0
-												|| Main.this.getConfig().getInt(String.valueOf(ssj) + ".Cooldown") == 0
-												|| player.isOp()) {
-											Main.this.cooldownTime.remove(player);
-											Main.this.cooldownTask.remove(player);
-											cancel();
-										}
-									}
-								});
-								((BukkitRunnable) this.cooldownTask.get(player)).runTaskTimer((Plugin) this, 20L, 20L);
-								if (player.isOp()) {
-									player.sendMessage(String.valueOf(this.Prefix) + ChatColor.DARK_GREEN
-											+ "You are OP, cooldown doesn't apply to you!");
-								} else if (getConfig().getInt(String.valueOf(ssj) + ".Cooldown") == 0) {
-									player.sendMessage(String.valueOf(this.Prefix) + ChatColor.DARK_GREEN
-											+ "Cooldown for this transformation is set to 0.");
-								} else if (((Integer) this.cooldownTime.get(player)).intValue() == 0) {
-									player.sendMessage(String.valueOf(this.Prefix) + ChatColor.DARK_GREEN
-											+ "Cooldown is finished!");
-								} else {
-									player.sendMessage(String.valueOf(this.Prefix) + "You're now on a "
-											+ getConfig().getInt(String.valueOf(ssj) + ".Cooldown")
-											+ " second cooldown");
-								}
+
+								ParticleSystem.ssjPs(sender, player, particle1, particle2);
+								
+								Cooldowns.ssjCooldown(player, stime);
+								
 								return true;
 							}
 							player.sendMessage(
@@ -297,24 +238,28 @@ public class Main extends JavaPlugin implements Listener {
 				} else if (cmd.getName().equalsIgnoreCase("kaioken")) {
 					for (int i = 0; i < this.kaiokenList.size(); i++) {
 						final String kaioken = this.kaiokenList.get(i);
+
+						int ktime = Integer
+								.valueOf(getConfig().getInt(String.valueOf(kaioken) + ".Kaioken_Cooldown") * 20);
+						int ktime2 = Integer
+								.valueOf(getConfig().getInt(String.valueOf(kaioken) + ".Cooldown"));
+
+						String particlek1 = Main.this.getConfig().getString(String.valueOf(kaioken) + ".Particle.Type");
+						String particlek2 = Main.this.getConfig()
+								.getString(String.valueOf(kaioken) + ".Particle2.Type");
+
 						if (args[0].equalsIgnoreCase(getConfig().getString(String.valueOf(kaioken) + ".CommandName"))) {
 							cmdFound = true;
 							if (player.hasPermission(
 									"ssj." + getConfig().getString(String.valueOf(kaioken) + ".CommandName"))) {
-								if (this.cooldownTime.containsKey(player)) {
+								if (Cooldowns.cooldownTime.containsKey(player)) {
 									player.sendMessage(String.valueOf(this.Prefix) + ChatColor.RED
-											+ "You must wait for " + this.cooldownTime.get(player) + " seconds.");
+											+ "You must wait for " + Cooldowns.cooldownTime.get(player) + " seconds.");
 									return true;
 								}
-								player.removePotionEffect(PotionEffectType.FAST_DIGGING);
-								player.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
-								player.removePotionEffect(PotionEffectType.HEAL);
-								player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
-								player.removePotionEffect(PotionEffectType.JUMP);
-								player.removePotionEffect(PotionEffectType.REGENERATION);
-								player.removePotionEffect(PotionEffectType.SATURATION);
-								player.removePotionEffect(PotionEffectType.SPEED);
-								player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
+
+								Listeners.removeP(player);
+
 								if (getConfig().getBoolean(String.valueOf(kaioken) + ".Broadcast")) {
 									Bukkit.broadcastMessage(String.valueOf(player.getDisplayName()) + ": " + getConfig()
 											.getString(String.valueOf(kaioken) + ".PrefixQuote").replace("&", "§"));
@@ -383,76 +328,11 @@ public class Main extends JavaPlugin implements Listener {
 								if (getConfig().getBoolean("Sound_Effect"))
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
-								this.cooldownTimeK.put(player, Integer.valueOf(
-										getConfig().getInt(String.valueOf(kaioken) + ".Kaioken_Cooldown") * 20));
-								BukkitTask t = this.tasks.put(sender, (new BukkitRunnable() {
-									public void run() {
-										Main.this.cooldownTimeK.put(player, Integer.valueOf(
-												((Integer) Main.this.cooldownTimeK.get(player)).intValue() - 1));
-										if (((Integer) Main.this.cooldownTimeK.get(player)).intValue() == 0
-												|| Main.this.getConfig()
-														.getInt(String.valueOf(kaioken) + ".Kaioken_Cooldown") == 0) {
-											player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
-											player.removePotionEffect(PotionEffectType.FAST_DIGGING);
-											player.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
-											player.removePotionEffect(PotionEffectType.HEAL);
-											player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
-											player.removePotionEffect(PotionEffectType.JUMP);
-											player.removePotionEffect(PotionEffectType.REGENERATION);
-											player.removePotionEffect(PotionEffectType.SATURATION);
-											player.removePotionEffect(PotionEffectType.SPEED);
-											player.removePotionEffect(PotionEffectType.HEALTH_BOOST);
-											Main.this.cooldownTimeK.remove(player);
-											cancel();
-										}
-										Location location = player.getLocation();
-										World world = player.getWorld();
-										String checkKaioken = Main.this.getConfig()
-												.getString(String.valueOf(kaioken) + ".Particle");
-										if (checkKaioken.contains("redstone")) {
-											world.spawnParticle(Particle.REDSTONE, location, pcount, 0.3D, 0.9D, 0.3D,
-													0.05D, redstone);
-										} else {
-											world.spawnParticle(Particle.valueOf(Main.this.getConfig()
-													.getString(String.valueOf(kaioken) + ".Particle").toUpperCase()),
-													location.getX(), location.getY(), location.getZ(), pcount, 0.3D,
-													0.9D, 0.3D, 0.05D);
-										}
-									}
-								}).runTaskTimer((Plugin) this, 0L, 0L));
-								if (t != null)
-									t.cancel();
-								this.cooldownTime.put(player,
-										Integer.valueOf(getConfig().getInt(String.valueOf(kaioken) + ".Cooldown")));
-								this.cooldownTask.put(player, new BukkitRunnable() {
-									public void run() {
-										Main.this.cooldownTime.put(player, Integer.valueOf(
-												((Integer) Main.this.cooldownTime.get(player)).intValue() - 1));
-										if (((Integer) Main.this.cooldownTime.get(player)).intValue() == 0
-												|| Main.this.getConfig()
-														.getInt(String.valueOf(kaioken) + ".Cooldown") == 0
-												|| player.isOp()) {
-											Main.this.cooldownTime.remove(player);
-											Main.this.cooldownTask.remove(player);
-											cancel();
-										}
-									}
-								});
-								((BukkitRunnable) this.cooldownTask.get(player)).runTaskTimer((Plugin) this, 20L, 20L);
-								if (player.isOp()) {
-									player.sendMessage(String.valueOf(this.Prefix) + ChatColor.DARK_GREEN
-											+ "You are OP, cooldown doesn't apply to you!");
-								} else if (getConfig().getInt(String.valueOf(kaioken) + ".Cooldown") == 0) {
-									player.sendMessage(String.valueOf(this.Prefix) + ChatColor.DARK_GREEN
-											+ "Cooldown for this transformation is set to 0.");
-								} else if (((Integer) this.cooldownTime.get(player)).intValue() == 0) {
-									player.sendMessage(String.valueOf(this.Prefix) + ChatColor.DARK_GREEN
-											+ "Cooldown is finished!");
-								} else {
-									player.sendMessage(String.valueOf(this.Prefix) + "You're now on a "
-											+ getConfig().getInt(String.valueOf(kaioken) + ".Cooldown")
-											+ " second cooldown");
-								}
+
+								ParticleSystem.kaiokenPs(sender, player, particlek1, particlek2, ktime);
+								
+								Cooldowns.kaiokenCooldown(player, ktime2);
+								
 							} else {
 								player.sendMessage(String.valueOf(this.Prefix) + ChatColor.DARK_RED
 										+ "You do not have permission to perform this command.");
@@ -460,46 +340,25 @@ public class Main extends JavaPlugin implements Listener {
 						}
 					}
 				}
+
 			if (!cmdFound || args.length == 0) {
+
 				player.sendMessage(ChatColor.RED + "Usage: /ssj [id]");
 				player.sendMessage(ChatColor.RED + "Usage: /kaioken x[id]");
 				player.sendMessage(ChatColor.RED + "Usage: /ssj list");
 				player.sendMessage(ChatColor.RED + "Usage: /ssj info");
+
 			}
-		} else if (args[0].equalsIgnoreCase("reload") && !(sender instanceof Player)) {
+
+		} else if (args[0].equalsIgnoreCase("reload")
+				|| args[0].equalsIgnoreCase("rl") && !(sender instanceof Player)) {
+
 			saveDefaultConfig();
 			reloadConfig();
-			Bukkit.getLogger().info("[Super Saiyan PL] Successfully reloaded config!");
+			Bukkit.getLogger().info(Prefix + "Successfully reloaded config!");
+
 		}
 		return false;
 	}
 
-	@EventHandler
-	public void onQuit(PlayerQuitEvent event) {
-		Player player = event.getPlayer();
-		BukkitTask t = this.tasks.get(player);
-		if (t != null)
-			t.cancel();
-	}
-
-	@EventHandler
-	public void onDeath(PlayerDeathEvent event) {
-		Player player = event.getEntity().getPlayer();
-		BukkitTask t = this.tasks.get(player);
-		if (t != null)
-			t.cancel();
-	}
-
-	@EventHandler
-	public void onPlayerTeleportTeleport(PlayerTeleportEvent event) {
-		if (getConfig().getBoolean("Teleportation_Removal")) {
-			Player player = event.getPlayer();
-			if (event.getCause() == PlayerTeleportEvent.TeleportCause.PLUGIN
-					|| event.getCause() == PlayerTeleportEvent.TeleportCause.COMMAND) {
-				BukkitTask t = this.tasks.get(player);
-				if (t != null)
-					t.cancel();
-			}
-		}
-	}
 }

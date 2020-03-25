@@ -10,21 +10,22 @@ import org.bukkit.event.Listener;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
-public class ParticleSystem implements Listener{
+public class ParticleSystem implements Listener {
 
 	static HashMap<Player, Integer> cooldownTimeK;
-	
+
 	static Main plugin;
-	
+
 	@SuppressWarnings("static-access")
 	public ParticleSystem(Main main) {
 		this.plugin = main;
 	}
 
 	private static Map<CommandSender, BukkitTask> tasks = new HashMap<>();
-	
-	public static void ssjPs(CommandSender sender, Player player, String particle1, String particle2) {
-		
+
+	public static void ssjPs(CommandSender sender, Player player, String particle1, String particle2, Integer spc,
+			Integer spc2) {
+
 		BukkitTask t = tasks.put(sender, (new BukkitRunnable() {
 
 			public void run() {
@@ -35,38 +36,36 @@ public class ParticleSystem implements Listener{
 
 					if (particle2.contains("redstone")) {
 
-						ParticleEffects.runRedstoneHelix2(location);
+						ParticleEffects.runRedstone2(player, location, spc2);
 
-						ParticleEffects.runHelix(location, particle1);
+						ParticleEffects.runp(player, location, particle1, spc);
 
 					} else if (particle1.contains("redstone")) {
 
-						ParticleEffects.runRedstoneHelix(location);
+						ParticleEffects.runRedstone(player, location, spc);
 
-						ParticleEffects.runHelix2(location, particle2);
+						ParticleEffects.runp2(player, location, particle2, spc2);
 
-					} else if (particle1.contains("redstone")
-							&& particle2.contains("redstone")) {
+					} else if (particle1.contains("redstone") && particle2.contains("redstone")) {
 
-						ParticleEffects.runRedstoneHelix(location);
-						ParticleEffects.runRedstoneHelix2(location);
+						ParticleEffects.runRedstone(player, location, spc2);
+						ParticleEffects.runRedstone2(player, location, spc2);
 
 					} else {
 
-						ParticleEffects.runHelix(location, particle1);
-						ParticleEffects.runHelix2(location, particle2);
+						ParticleEffects.runp(player, location, particle1, spc);
+						ParticleEffects.runp2(player, location, particle2, spc2);
 					}
 
 				} else if (particle2.isEmpty()) {
-					
+
 					if (particle1.contains("redstone")) {
 
-						ParticleEffects.runRedstoneHelix(location);
+						ParticleEffects.runRedstone(player, location, spc);
 
 					} else {
 
-						ParticleEffects.runHelix(location, particle1);
-						ParticleEffects.updateTimers();
+						ParticleEffects.runp(player, location, particle1, spc);
 					}
 
 				}
@@ -74,77 +73,75 @@ public class ParticleSystem implements Listener{
 		}).runTaskTimerAsynchronously(plugin, 0L, 0L));
 		if (t != null)
 			t.cancel();
-		
+
 	}
-	
-public static void kaiokenPs(CommandSender sender, Player player, String particlek1, String particlek2, Integer ktime) {
-		
-	cooldownTimeK.put(player, ktime);
-	BukkitTask t = tasks.put(sender, (new BukkitRunnable() {
-		public void run() {
-			cooldownTimeK.put(player, Integer.valueOf(
-					((Integer) cooldownTimeK.get(player)).intValue() - 1));
 
-			if (((Integer) cooldownTimeK.get(player)).intValue() == 0
-					|| ktime == 0) {
+	public static void kaiokenPs(CommandSender sender, Player player, String particlek1, String particlek2,
+			Integer ktime, Integer kpc, Integer kpc2) {
 
-				Listeners.removeP(player);
+		cooldownTimeK.put(player, ktime);
+		BukkitTask t = tasks.put(sender, (new BukkitRunnable() {
+			public void run() {
+				cooldownTimeK.put(player, Integer.valueOf(((Integer) cooldownTimeK.get(player)).intValue() - 1));
 
-				cooldownTimeK.remove(player);
-				cancel();
-			}
-			
-			Location location = player.getLocation();
+				if (((Integer) cooldownTimeK.get(player)).intValue() == 0 || ktime == 0) {
 
-			if (!particlek2.isEmpty()) {
+					Listeners.removeP(player);
 
-				if (particlek2.contains("redstone")) {
-
-					ParticleEffects.runRedstoneHelix2(location);
-					ParticleEffects.runKaiokenHelix(location, particlek1);
-
-				} else if (particlek1.contains("redstone")) {
-
-					ParticleEffects.runKaiokenHelix2(location, particlek2);
-					ParticleEffects.runRedstoneHelix(location);
-
-				} else if (particlek1.contains("redstone")
-						&& particlek2.contains("redstone")) {
-
-					ParticleEffects.runRedstoneHelix(location);
-					ParticleEffects.runRedstoneHelix2(location);
-
-				} else {
-
-					ParticleEffects.runKaiokenHelix(location, particlek1);
-					ParticleEffects.runKaiokenHelix2(location, particlek2);
+					cooldownTimeK.remove(player);
+					cancel();
 				}
 
-			} else if (particlek2.isEmpty()) {
+				Location location = player.getLocation();
 
-				if (particlek1.contains("redstone")) {
+				if (!particlek2.isEmpty()) {
 
-					ParticleEffects.runRedstoneHelix(location);
+					if (particlek2.contains("redstone")) {
 
-				} else {
+						ParticleEffects.runRedstone2(player, location, kpc2);
+						ParticleEffects.runKaioken(player, location, particlek1, kpc);
 
-					ParticleEffects.runKaiokenHelix(location, particlek1);
+					} else if (particlek1.contains("redstone")) {
 
+						ParticleEffects.runKaioken2(player, location, particlek2, kpc2);
+						ParticleEffects.runRedstone(player, location, kpc);
+
+					} else if (particlek1.contains("redstone") && particlek2.contains("redstone")) {
+
+						ParticleEffects.runRedstone(player, location, kpc);
+						ParticleEffects.runRedstone2(player, location, kpc2);
+
+					} else {
+
+						ParticleEffects.runKaioken(player, location, particlek1, kpc);
+						ParticleEffects.runKaioken2(player, location, particlek2, kpc2);
+					}
+
+				} else if (particlek2.isEmpty()) {
+
+					if (particlek1.contains("redstone")) {
+
+						ParticleEffects.runRedstone(player, location, kpc);
+
+					} else {
+
+						ParticleEffects.runKaioken(player, location, particlek1, kpc);
+
+					}
 				}
 			}
-		}
 
-	}).runTaskTimer(plugin, 0L, 0L));
+		}).runTaskTimer(plugin, 0L, 0L));
 
-	if (t != null)
-		t.cancel();
-		
+		if (t != null)
+			t.cancel();
+
 	}
-	
+
 	public static void cancel(Player player) {
 		BukkitTask t = tasks.get(player);
 		if (t != null)
 			t.cancel();
 	}
-	
+
 }

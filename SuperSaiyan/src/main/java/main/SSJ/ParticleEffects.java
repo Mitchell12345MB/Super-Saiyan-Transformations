@@ -3,6 +3,8 @@ package main.SSJ;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Particle;
+import org.bukkit.World;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
 public class ParticleEffects implements Listener {
@@ -16,207 +18,83 @@ public class ParticleEffects implements Listener {
 	  }
 
 
-	public static void runRedstoneHelix(Location loc) {
-
-		double radius = 5;
+	public static void runRedstone(Player player, Location loc, Integer kpc) {
 
 		Particle.DustOptions redstone = new Particle.DustOptions(Color.RED, 1);
 
-		for (double y = 5; y >= 0; y -= 0.07) {
-
-			radius = y / 3;
-
-			double x = radius * Math.cos(3 * y);
-			double z = radius * Math.sin(3 * y);
-
-			double y2 = 3 - y;
-
-			Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-			loc2.getWorld().spawnParticle(Particle.REDSTONE, loc2, 1, redstone);
-		}
-
-		for (double y = 5; y >= 0; y -= 0.07) {
-			radius = y / 3;
-			double x = -(radius * Math.cos(3 * y));
-			double z = -(radius * Math.sin(3 * y));
-
-			double y2 = 3 - y;
-
-			Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-			loc2.getWorld().spawnParticle(Particle.REDSTONE, loc2, 1, redstone);
-		}
+		World locq = player.getWorld();
+		Location locs = player.getLocation();
+		
+		double x = locs.getX();
+		double y = locs.getY() + 1;
+		double z = locs.getZ();
+		
+		locq.spawnParticle(Particle.REDSTONE, x, y, z, kpc, 0.3, 1, 0.3, 0.05, redstone);
 	}
 
-	public static void runRedstoneHelix2(Location loc) {
-
-		double radius = 5;
+	public static void runRedstone2(Player player, Location loc, Integer kpc2) {
 
 		Particle.DustOptions redstone = new Particle.DustOptions(Color.RED, 1);
 
-		for (double y = 5; y >= 0; y -= 0.07) {
-
-			radius = y / 3;
-
-			double x = radius * Math.cos(3 * y);
-			double z = radius * Math.sin(3 * y);
-
-			double y2 = 3 - y;
-
-			Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-			loc2.getWorld().spawnParticle(Particle.REDSTONE, loc2, 0, redstone);
-		}
-
-		for (double y = 5; y >= 0; y -= 0.07) {
-
-			radius = y / 3;
-
-			double x = -(radius * Math.cos(3 * y));
-			double z = -(radius * Math.sin(3 * y));
-
-			double y2 = 3 - y;
-
-			Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-			loc2.getWorld().spawnParticle(Particle.REDSTONE, loc2, 0, redstone);
-		}
-
+		World locq = player.getWorld();
+		Location locs = player.getLocation();
+		
+		double x = locs.getX();
+		double y = locs.getY() + 1;
+		double z = locs.getZ();
+		
+		locq.spawnParticle(Particle.REDSTONE, x, y, z, kpc2, 0.3, 1, 0.3, 0.05, redstone);
 	}
 
-	public static void runKaiokenHelix(Location loc, String particlek1) {
+	public static void runKaioken(Player player, Location loc, String particlek1, Integer kpc) {
 
-			double radius = 5;
-
-			for (double y = 5; y >= 0; y -= 0.07) {
-
-				radius = y / 3;
-
-				double x = radius * Math.cos(3 * y);
-				double z = radius * Math.sin(3 * y);
-
-				double y2 = 3 - y;
-
-				Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-				loc2.getWorld().spawnParticle(Particle.valueOf(particlek1.toUpperCase()), loc2, 0);
-			}
-
-			for (double y = 5; y >= 0; y -= 0.07) {
-				radius = y / 3;
-				double x = -(radius * Math.cos(3 * y));
-				double z = -(radius * Math.sin(3 * y));
-
-				double y2 = 3 - y;
-
-				Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-				loc2.getWorld().spawnParticle(Particle.valueOf(particlek1.toUpperCase()), loc2, 0);
-			}
+		World locq = player.getWorld();
+		Location locs = player.getLocation();
+		
+		double x = locs.getX();
+		double y = locs.getY() + 1;
+		double z = locs.getZ();
+		
+		locq.spawnParticle(Particle.valueOf(particlek1.toUpperCase()), x, y, z, kpc, 0.3, 1, 0.3, 0.05);
+		
 		}
 
-	public static void runKaiokenHelix2(Location loc, String particlek2) {
+	public static void runKaioken2(Player player, Location loc, String particlek1, Integer kpc2) {
 
-			double radius = 5;
-
-			for (double y = 5; y >= 0; y -= 0.07) {
-
-				radius = y / 3;
-
-				double x = radius * Math.cos(3 * y);
-				double z = radius * Math.sin(3 * y);
-
-				double y2 = 3 - y;
-
-				Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-				loc2.getWorld().spawnParticle(Particle.valueOf(particlek2.toUpperCase()), loc2, 0);
-			}
-
-			for (double y = 5; y >= 0; y -= 0.07) {
-				radius = y / 3;
-				double x = -(radius * Math.cos(3 * y));
-				double z = -(radius * Math.sin(3 * y));
-
-				double y2 = 3 - y;
-
-				Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-				loc2.getWorld().spawnParticle(Particle.valueOf(particlek2.toUpperCase()), loc2, 0);
-			}
+		World locq = player.getWorld();
+		Location locs = player.getLocation();
+		
+		double x = locs.getX();
+		double y = locs.getY() + 1;
+		double z = locs.getZ();
+		
+		locq.spawnParticle(Particle.valueOf(particlek1.toUpperCase()), x, y, z, kpc2, 0.3, 1, 0.3, 0.05);
 		}
-
-	private static int stepX = 0;
-    private static int stepY = 0;
-    private static boolean reverse = false;
-
-    private static int orbs = 4;
-    private static int maxStepX = 80;
-    private static int maxStepY = 60;
 	
-	public static void runHelix(Location loc, String particle1) {
+	
+	public static void runp(Player player, Location loc, String particle1, Integer spc) {
 			
-			//double radius = 5;
-
-			for (int i = 0; i < orbs; i++) {
-	            double dx = -(MathL.cos((stepX / (double) maxStepX) * (Math.PI * 2) + (((Math.PI * 2) / orbs) * i))) * ((maxStepY - Math.abs(stepY)) / (double) maxStepY);
-	            double dy = (stepY / (double) maxStepY) * 1.5;
-	            double dz = -(MathL.sin((stepX / (double) maxStepX) * (Math.PI * 2) + (((Math.PI * 2) / orbs) * i))) * ((maxStepY - Math.abs(stepY)) / (double) maxStepY);
-	            
-	            Location loc2 = loc.clone().add(dx, dy, dz);
-	            loc2.getWorld().spawnParticle(Particle.valueOf(particle1.toUpperCase()), loc2, 0);
-	        }
-
-//		for (double y = 5; y >= 0; y -= 0.07) {
-//			radius = y / 3;
-//			double x = -(radius * Math.cos(3 * y));
-//			double z = -(radius * Math.sin(3 * y));
-//
-//			double y2 = 3 - y;
-//
-//			Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-//			loc2.getWorld().spawnParticle(Particle.valueOf(particle1.toUpperCase()), loc2, 0);
-//		}
-
+		World locq = player.getWorld();
+		Location locs = player.getLocation();
+		
+		double x = locs.getX();
+		double y = locs.getY() + 1;
+		double z = locs.getZ();
+		
+		locq.spawnParticle(Particle.valueOf(particle1.toUpperCase()), x, y, z, spc, 0.3, 1, 0.3, 0.05);
+		
 	}
 	
-	public static void updateTimers() {
-        stepX++;
-        if (stepX > maxStepX) {
-            stepX = 0;
-        }
-        if (reverse) {
-            stepY++;
-            if (stepY > maxStepY)
-                reverse = false;
-        } else {
-            stepY--;
-            if (stepY < -maxStepY)
-                reverse = true;
-        }
-    }
-	
-	public static void runHelix2(Location loc, String particle2) {
+	public static void runp2(Player player, Location loc, String particle2, Integer spc2) {
 
-			double radius = 5;
-
-			for (double y = 5; y >= 0; y -= 0.07) {
-
-				radius = y / 3;
-
-				double x = radius * Math.cos(3 * y);
-				double z = radius * Math.sin(3 * y);
-
-				double y2 = 3 - y;
-
-				Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-				loc2.getWorld().spawnParticle(Particle.valueOf(particle2.toUpperCase()), loc2, 0);
-			}
-
-			for (double y = 5; y >= 0; y -= 0.07) {
-				radius = y / 3;
-				double x = -(radius * Math.cos(3 * y));
-				double z = -(radius * Math.sin(3 * y));
-
-				double y2 = 3 - y;
-
-				Location loc2 = new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y2, loc.getZ() + z);
-				loc2.getWorld().spawnParticle(Particle.valueOf(particle2.toUpperCase()), loc2, 0);
-			}
-
-		}
+		World locq = player.getWorld();
+		Location locs = player.getLocation();
+		
+		double x = locs.getX();
+		double y = locs.getY() + 1;
+		double z = locs.getZ();
+		
+		locq.spawnParticle(Particle.valueOf(particle2.toUpperCase()), x, y, z, spc2, 0.3, 1, 0.3, 0.05);
+	}
 
 }

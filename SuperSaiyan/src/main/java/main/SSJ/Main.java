@@ -91,6 +91,10 @@ public class Main extends JavaPlugin implements Listener {
 
 						int stime = Integer
 								.valueOf(getConfig().getInt(String.valueOf(ssj) + ".Cooldown"));
+						int spc = Integer
+								.valueOf(getConfig().getInt(String.valueOf(ssj) + ".Particle.Count"));
+						int spc2 = Integer
+								.valueOf(getConfig().getInt(String.valueOf(ssj) + ".Particle2.Count"));
 						
 						String particle1 = Main.this.getConfig().getString(String.valueOf(ssj) + ".Particle.Type");
 						String particle2 = Main.this.getConfig().getString(String.valueOf(ssj) + ".Particle2.Type");
@@ -173,7 +177,7 @@ public class Main extends JavaPlugin implements Listener {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 
-								ParticleSystem.ssjPs(sender, player, particle1, particle2);
+								ParticleSystem.ssjPs(sender, player, particle1, particle2, spc, spc2);
 								
 								Cooldowns.ssjCooldown(player, stime);
 								
@@ -247,6 +251,11 @@ public class Main extends JavaPlugin implements Listener {
 						String particlek1 = Main.this.getConfig().getString(String.valueOf(kaioken) + ".Particle.Type");
 						String particlek2 = Main.this.getConfig()
 								.getString(String.valueOf(kaioken) + ".Particle2.Type");
+						
+						int kpc = Integer
+								.valueOf(getConfig().getInt(String.valueOf(kaioken) + ".Particle.Count"));
+						int kpc2 = Integer
+								.valueOf(getConfig().getInt(String.valueOf(kaioken) + ".Particle2.Count"));
 
 						if (args[0].equalsIgnoreCase(getConfig().getString(String.valueOf(kaioken) + ".CommandName"))) {
 							cmdFound = true;
@@ -329,7 +338,7 @@ public class Main extends JavaPlugin implements Listener {
 									player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 1.0F,
 											2.0F);
 
-								ParticleSystem.kaiokenPs(sender, player, particlek1, particlek2, ktime);
+								ParticleSystem.kaiokenPs(sender, player, particlek1, particlek2, ktime, kpc, kpc2);
 								
 								Cooldowns.kaiokenCooldown(player, ktime2);
 								

@@ -20,7 +20,7 @@ import org.bukkit.potion.PotionEffectType;
 
 public class Main extends JavaPlugin implements Listener {
 
-	String Prefix = getConfig().getString("Prefix").replace("&", "ง");
+	String Prefix = getConfig().getString("Prefix").replace("&", "ยง");
 
 	Random rand = new Random();
 
@@ -81,9 +81,9 @@ public class Main extends JavaPlugin implements Listener {
 						cmdFound = true;
 						ParticleSystem.cancel(player);
 						Listeners.removeP(player);
-						player.sendMessage(getConfig().getString("Base_Form.PrefixQuote").replace("&", "ง"));
-						player.sendMessage(getConfig().getString("Base_Form.MiddleQuote").replace("&", "ง"));
-						player.sendMessage(getConfig().getString("Base_Form.SuffixQuote").replace("&", "ง"));
+						player.sendMessage(getConfig().getString("Base_Form.PrefixQuote").replace("&", "ยง"));
+						player.sendMessage(getConfig().getString("Base_Form.MiddleQuote").replace("&", "ยง"));
+						player.sendMessage(getConfig().getString("Base_Form.SuffixQuote").replace("&", "ยง"));
 					}
 					int i;
 					for (i = 0; i < this.ssjList.size(); i++) {
@@ -112,18 +112,18 @@ public class Main extends JavaPlugin implements Listener {
 								if (getConfig()
 										.getBoolean(getConfig().getString(String.valueOf(ssj) + ".CommandName"))) {
 									Bukkit.broadcastMessage(String.valueOf(player.getDisplayName()) + ": " + getConfig()
-											.getString(String.valueOf(ssj) + ".PrefixQuote").replace("&", "ง"));
+											.getString(String.valueOf(ssj) + ".PrefixQuote").replace("&", "ยง"));
 									Bukkit.broadcastMessage(String.valueOf(player.getDisplayName()) + ": " + getConfig()
-											.getString(String.valueOf(ssj) + ".MiddleQuote").replace("&", "ง"));
+											.getString(String.valueOf(ssj) + ".MiddleQuote").replace("&", "ยง"));
 									Bukkit.broadcastMessage(String.valueOf(player.getDisplayName()) + ": " + getConfig()
-											.getString(String.valueOf(ssj) + ".SuffixQuote").replace("&", "ง"));
+											.getString(String.valueOf(ssj) + ".SuffixQuote").replace("&", "ยง"));
 								} else {
 									player.sendMessage(getConfig().getString(String.valueOf(ssj) + ".PrefixQuote")
-											.replace("&", "ง"));
+											.replace("&", "ยง"));
 									player.sendMessage(getConfig().getString(String.valueOf(ssj) + ".MiddleQuote")
-											.replace("&", "ง"));
+											.replace("&", "ยง"));
 									player.sendMessage(getConfig().getString(String.valueOf(ssj) + ".SuffixQuote")
-											.replace("&", "ง"));
+											.replace("&", "ยง"));
 								}
 								if (getConfig().getBoolean(String.valueOf(ssj) + ".Use_Traits?.DAMAGE_RESISTANCE"))
 									player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE,
@@ -166,7 +166,7 @@ public class Main extends JavaPlugin implements Listener {
 										player.addPotionEffect(
 												new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
 									player.sendMessage(getConfig().getString(String.valueOf(ssj) + ".DamageTakenQuote")
-											.replace("&", "ง"));
+											.replace("&", "ยง"));
 								}
 								if (getConfig().getBoolean("Lightning_Effect"))
 									player.getWorld().strikeLightning(player.getLocation());
@@ -271,18 +271,18 @@ public class Main extends JavaPlugin implements Listener {
 
 								if (getConfig().getBoolean(String.valueOf(kaioken) + ".Broadcast")) {
 									Bukkit.broadcastMessage(String.valueOf(player.getDisplayName()) + ": " + getConfig()
-											.getString(String.valueOf(kaioken) + ".PrefixQuote").replace("&", "ง"));
+											.getString(String.valueOf(kaioken) + ".PrefixQuote").replace("&", "ยง"));
 									Bukkit.broadcastMessage(String.valueOf(player.getDisplayName()) + ": " + getConfig()
-											.getString(String.valueOf(kaioken) + ".MiddleQuote").replace("&", "ง"));
+											.getString(String.valueOf(kaioken) + ".MiddleQuote").replace("&", "ยง"));
 									Bukkit.broadcastMessage(String.valueOf(player.getDisplayName()) + ": " + getConfig()
-											.getString(String.valueOf(kaioken) + ".SuffixQuote").replace("&", "ง"));
+											.getString(String.valueOf(kaioken) + ".SuffixQuote").replace("&", "ยง"));
 								} else {
 									player.sendMessage(getConfig().getString(String.valueOf(kaioken) + ".PrefixQuote")
-											.replace("&", "ง"));
+											.replace("&", "ยง"));
 									player.sendMessage(getConfig().getString(String.valueOf(kaioken) + ".MiddleQuote")
-											.replace("&", "ง"));
+											.replace("&", "ยง"));
 									player.sendMessage(getConfig().getString(String.valueOf(kaioken) + ".SuffixQuote")
-											.replace("&", "ง"));
+											.replace("&", "ยง"));
 								}
 								if (getConfig().getBoolean(String.valueOf(kaioken) + ".Use_Traits?.DAMAGE_RESISTANCE"))
 									player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE,
@@ -327,7 +327,7 @@ public class Main extends JavaPlugin implements Listener {
 												new PotionEffect(PotionEffectType.HEALTH_BOOST, 100000000, 0));
 									player.sendMessage(
 											getConfig().getString(String.valueOf(kaioken) + ".DamageTakenQuote")
-													.replace("&", "ง"));
+													.replace("&", "ยง"));
 								}
 								if (getConfig().getBoolean("Lightning_Effect"))
 									player.getWorld().strikeLightning(player.getLocation());
@@ -371,3 +371,4 @@ public class Main extends JavaPlugin implements Listener {
 	}
 
 }
+// beat that noor!

@@ -371,4 +371,4 @@ public class Main extends JavaPlugin implements Listener {
 	}
 
 }
-// beat that Noorquacker!
+// beat that Noorquacker

@@ -1,0 +1,9 @@
+name: Super-Saiyan-TransformationsP
+version: '16'
+main: org.apache.maven.supersaiyantransformationsp.SSJ
+api-version: 1.19
+commands:
+  ssj:
+    description: Turns you into a Super Saiyan!
+  kaioken:
+    description: Kaioken Attack.

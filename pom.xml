@@ -9,7 +9,7 @@
     <version>16</version>
     <packaging>jar</packaging>
 
-    <name>Super-Saiyan-TransformationsP</name>
+    <name>SuperSaiyan V16-1.19.3</name>
 
     <properties>
         <java.version>1.19</java.version>
@@ -67,7 +67,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.19.3-R0.1-SNAPSHOT</version>
+            <version>1.19.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

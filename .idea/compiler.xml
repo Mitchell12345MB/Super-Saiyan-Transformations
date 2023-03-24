@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Super-Saiyan-TransformationsP" target="19" />
+      <module name="Super-Saiyan-TransformationsP" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

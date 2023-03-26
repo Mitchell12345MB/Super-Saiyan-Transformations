@@ -1,8 +1,8 @@
-# Contact Mitchell on the plugin page if you need help.
-# Plugin page: http://bit.ly/1SMxY8S
+# Contact SauSAliens on the plugin page if you need help.
+# Plugin page: https://www.spigotmc.org/resources/super-saiyan-transformations.18212/
 
 # DO NOT CHANGE THIS UNDER ANY CIRCUMSTANCE (Will reset your config)
-version: 17
+version: 18
 
 #####################################################
 #                                                   #
@@ -22,9 +22,9 @@ Lightning_Effect: true
 # This true or false the explosion effect when transforming
 Explosion_Effect: true
 
-# If the Explosion_Effect is set to "true", then you have the option to make blocks around you expload_normal when transforming.
+# If the Explosion_Effect is set to "true", then you have the option to make blocks around you explode_normal when transforming.
 # (Leave "0" if you just want the effect).
-Explosion_Radious: 0
+Explosion_Radius: 0
 
 # This true or false the sound when transforming (Sound: Ghast Firing)
 Sound_Effect: True

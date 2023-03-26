@@ -191,7 +191,7 @@ public class SSJCommands implements CommandExecutor {
 
                                     player.getWorld().createExplosion(player.getLocation(),
 
-                                            ssj.getConfig().getInt("Explosion_Radious"));
+                                            ssj.getConfig().getInt("Explosion_Radius"));
 
                                 if (ssj.getConfig().getBoolean("Sound_Effect"))
 
@@ -439,7 +439,7 @@ public class SSJCommands implements CommandExecutor {
                                 if (ssj.getConfig().getBoolean("Explosion_Effect"))
 
                                     player.getWorld().createExplosion(player.getLocation(),
-                                            ssj.getConfig().getInt("Explosion_Radious"));
+                                            ssj.getConfig().getInt("Explosion_Radius"));
 
                                 if (ssj.getConfig().getBoolean("Sound_Effect"))
 

@@ -1,4 +1,4 @@
-package org.apache.maven.supersaiyantransformationsp;
+package org.apache.maven.supersaiyantransformations;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

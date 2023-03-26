@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SuperSaiyan V18-1.19.4:jar">
+    <output-path>$USER_HOME$/Desktop/Survival server/plugins</output-path>
+    <root id="archive" name="SuperSaiyan V18-1.19.4.jar">
+      <element id="module-output" name="Super-Saiyan-Transformations" />
+    </root>
+  </artifact>
+</component>

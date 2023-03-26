@@ -1,4 +1,4 @@
-package org.apache.maven.supersaiyantransformationsp;
+package org.apache.maven.supersaiyantransformations;
 
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.entity.Player;

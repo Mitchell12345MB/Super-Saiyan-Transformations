@@ -1,7 +1,7 @@
-name: Super-Saiyan-TransformationsP
+name: Super-Saiyan-Transformations
 version: '${project.version}'
-main: org.apache.maven.supersaiyantransformationsp.SSJ
-api-version: 1.19
+main: org.apache.maven.supersaiyantransformations.SSJ
+api-version: 1.17
 commands:
   ssj:
     description: Turns you into a Super Saiyan!
